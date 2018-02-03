@@ -14,28 +14,26 @@
 - 个人博客：https://lifewang.github.io/resume/
 - Github：https://github.com/lifewang
 - 期望职位：Java软件工程师
+- 期望薪资：税前月薪7.5k+
+- 期望城市：深圳
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 自我描述
 
-```markdown
-Syntax highlighted code block
+有扎实的编程功底，代码**书写规范**，自学能力强，喜欢了解并使用新技术进行开发。
+有责任心，能够适应工作上的难题和挑战，有钻研问题的执念。
+喜欢有效率的沟通和工作。
 
-# Header 1
-## Header 2
-### Header 3
+### 个人技能
 
-- Bulleted
-- List
+- 熟练使用jsp/servlet/tomcat进行web开发
+- 熟练使用struts2/springMVC MVC框架，并对了解其原理
+- 熟悉springboot微服务架构，能够进行服务模块化开发
+- 熟悉Ajax/jQuery等前端技术
+- 熟练使用MySQL进行项目开发，使用Redis进行数据缓存，熟练使用Hibernate 框架进行持久层开发，了解并使用过MyBatis进行开发。
+- 熟练使用Svn/Git进行项目版本控制，现已完全使用git进行协作开发。
 
-1. Numbered
-2. List
+### 工作经历
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
