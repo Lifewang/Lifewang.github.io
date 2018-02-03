@@ -1,10 +1,19 @@
-## Welcome to GitHub Pages
+## Life Wang
 
-You can use the [editor on GitHub](https://github.com/lifewang/lifewang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### 联系方式
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- 手机： 18126091755
+- Email： lifewangbl@foxmail.com
+- 微信号： wbl726617
 
-### Markdown
+### 个人信息
+
+- 王豹垒/男/1993 
+- 本科/网络工程
+- 工作年限：1年
+- 个人博客：https://lifewang.github.io/resume/
+- Github：https://github.com/lifewang
+- 期望职位：Java软件工程师
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
