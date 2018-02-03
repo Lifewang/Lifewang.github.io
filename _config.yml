@@ -10,13 +10,6 @@ author: Life Wang
 language: zh-Hans
 timezone: Asia/Shenzhen
 
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https: //lifewang.github.io/
-root: /
-permalink: : year/: month/: day/: title/
-permalink_defaults:
-
 # Directory
 source_dir: source
 public_dir: public
@@ -70,6 +63,6 @@ theme: jekyll-theme-cayman
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https: //github.com/lifewang/lifewang.github.io.git 
+  repository: https://github.com/lifewang/lifewang.github.io.git 
   branch: master
   message: update blog content.
