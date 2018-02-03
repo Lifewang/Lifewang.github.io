@@ -1,74 +1,37 @@
----
-# Frank的简历
----
-# 联系方式
+## Welcome to GitHub Pages
 
-- 手机：15538052287 
-- Email：tigerdream52@gmail.com
-- 微信号：wanghu851
----
+You can use the [editor on GitHub](https://github.com/lifewang/lifewang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-# 个人信息
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
- - 王虎/男/1994 
- - 本科/物联网工程
- - 工作年限：2年
- - 个人博客：https://wanghuu.github.io/
- - Github：https://github.com/wanghuu
- - 期望职位：Java软件工程师
+### Markdown
 
----
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-# 自我描述
-有扎实的编程功底，代码**书写规范**，自学能力强，喜欢了解并使用新技术进行开发。
-有责任心，能够适应工作上的难题和挑战，有钻研问题的执念。
-喜欢有效率的沟通和工作。
+```markdown
+Syntax highlighted code block
 
----
-# 技能清单
+# Header 1
+## Header 2
+### Header 3
 
-- 熟练使用jsp/servlet/tomcat进行web开发
-- 熟练使用struts2/springMVC MVC框架，并对了解其原理
-- 熟悉springboot，spring cloud微服务架构，能够进行服务模块化开发
-- 熟悉Ajax/jQuery等前端技术
-- 熟练使用MySQL进行项目开发，使用Redis进行数据缓存，熟练使用MyBatis 框架进行持久层开发，了解并使用过Hibernate进行开发。
-- 熟练使用Svn/Git进行项目版本控制，现已完全使用git进行协作开发
-- 熟练使用Linux常用命令，熟悉常用软件的安装和服务的部署, 如redis，nginx,fastdfs等。
+- Bulleted
+- List
 
----
+1. Numbered
+2. List
 
-# 工作经历
+**Bold** and _Italic_ and `Code` text
 
-## 高光世纪新能源科技公司 （ 2017年6月 ~ 2017年12月 ）
-### Youtil APP
-该APP是针对公司主要业务进行互联网升级的一个产品。主要功能是针对客户在进行LED灯安装过程中进行数据收集和计算，旨在打造一个一站式的能源解决方案平台。 在此项目中，我参与了系统的核心业务模块的开发，包括能源补贴的计算，LED灯具替换方案，以及平台的优化，并与第三方技术人员进行沟通协作，保证产品顺利上线。该产品的后台系统采用目前流行的SSM的架构，使用Maven进行项目管理，开发团队以gitlab作为工具进行协作开发。
+[Link](url) and ![Image](src)
+```
 
-在随着业务需求增加之后，我们对系统后台进行了重构,将系统进行服务化的拆分。使用当前流行的spring cloud微服务架构进行开发，通过Eureka进行服务注册和发现，并加入了Hystrix断路器进行服务的熔断保护。
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-## 农信通科技公司 （ 2016年7月 ~ 2017年5月 ）
+### Jekyll Themes
 
-### 神州牧易电子商城项目 
-神州牧易是一个专门从事畜牧业投入品交易的一个平台，类似于JD商城。会员可以在商城浏览商品、下订单，以及参加各种活动。商城采用分布式系统架构，子系统之间都是调用服务来实现系统之间的通信，使用 HTTP 协议传递 JSON 数据方式实现。这样降低了系统之间的耦合度， 提高了系统的扩展性。 为了提高系统的性能使用 **Redis **做系统缓存，并使用 Redis 实现 Session 共享。为了保证 Redis 的性能使用 Redis 的集群。搜索功能使用**solrCloud** 做搜索引擎。
-系统主要包括以下模块：
-- 后台管理系统： 管理商品、订单、类目、商品规格属性、用户管理以及内容发布等功能。
-- 前台系统：用户可以在前台系统中进行注册、登录、浏览商品、首页、下单等操作。
-- 会员系统：用户可以在该系统中查询已下的订单、收藏的商品、我的优惠券、团购等信息。
-- 订单系统：提供下单、查询订单、修改订单状态、定时处理订单。
-- 搜索系统：提供商品的搜索功能。
-- 单点登录系统：为多个系统之间提供用户登录凭证以及查询登录用户的信息。
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lifewang/lifewang.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-在此项目中，我参与了需求分析和项目的构建，参与了商品展示模块及搜索系统模块的开发及测试，搜索服务接口的开发。此外，还使用了Redis对项目的常用业务逻辑进行缓存处理，提高了系统的性能。能参与这个项目是我的荣幸，这让我了解了构建一个大型项目所需要的技术，也同时了解目前流行了SOA服务架构。
+### Support or Contact
 
-### 全国种子市场价格监管系统
-
-此项目是基于已有系统重构开发，由于旧的系统易用性较差，充满bug,所以使用了jeesite快速开发平台进行了项目的重构。我主要负责了项目的需求分析，表结构的设计，分析了以前系统中存在的一些问题，并和产品线经理进行了充分的讨论。 此项目中的一个困难点在于数据的统计和分析，由于要统计种子的品种、价格、地区等，需要进行复杂的表关系结构的设计，而且最后还需要进行存储过程的编写来进行统计结果分析。之前我对存储过程并不了解，也从没写过，但是通过网上查阅资料，能够写出实现基本功能的代码。
-
-### 新型经营主体信息直报系统
-此项目是为了帮助政府部门统计新型经营主体的信息而开发的，新型经营主体包括家庭农场和农民合作社，由于每年都要统计这些机构的信息，政府工作人员需要耗费极大的精力。我们基于他们的这一需求设计了这样一个信息直报系统，包含了Web端和手机端（Android）。
-在此项目中，我主要负责农民合作社模块，实现了包括登录注册，信息上报，报表导入导出，信息图表统计等功能。
-
-
-
----
-# 致谢
-感谢您花时间阅读我的简历，期待能有机会和您共事。
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
