@@ -10,6 +10,13 @@ author: Life Wang
 language: zh-Hans
 timezone: Asia/Shenzhen
 
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://lifewang.github.io/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
 # Directory
 source_dir: source
 public_dir: public
