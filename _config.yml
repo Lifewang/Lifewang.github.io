@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Life Wang
-subtitle: 找到属于自己的博客
-description: 技术和生活，我融为一体。
-author: Life Wang 
-language: zh-Hans
-timezone: Asia/Shenzhen
+title: Frank的博客
+subtitle:
+description:
+author: Frank Wang 
+language:
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://lifewang.github.io/
+url:  https://wanghuu.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,13 +63,12 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-#theme: yilia
-theme: jekyll-theme-cayman
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/lifewang/lifewang.github.io.git 
+  repository: https://github.com/wanghuu/wanghuu.github.io.git 
   branch: master
   message: update blog content.
