@@ -4,7 +4,7 @@
 # 联系方式
 
 - 手机：18126091755 
-- Email：lifewangbl@foxmail
+- Email：lifewangbl@foxmail.com
 - 微信号：wbl726617
 ---
 
