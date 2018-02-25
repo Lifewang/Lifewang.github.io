@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Fastdfs+Nginx安装配置文件服务器 | Life的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在开发一个电商项目，需要用到图片上传功能。传统得做法是将图片存储在本地路径，但对于大型的网站来说，一般都会有单独存储图片的服务器，通过查阅相关资料，折腾了几天，我选择使用了Fastdfs+Nginx的方式来配置了一台文件存储服务器。 Fastdfs是什么 FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容">
+  <meta name="description" content="最近在比较闲，就了解了下Fastdfs和Nginx，学习了Fastdfs+Nginx的方式来配置一台文件存储服务器。 Fastdfs是什么 FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容">
 <meta name="keywords" content="linux,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fastdfs+Nginx安装配置文件服务器">
 <meta property="og:url" content="https://lifewang.github.io/2016/12/09/Fastdfs-Nginx安装配置文件服务器/index.html">
 <meta property="og:site_name" content="Life的博客">
-<meta property="og:description" content="最近在开发一个电商项目，需要用到图片上传功能。传统得做法是将图片存储在本地路径，但对于大型的网站来说，一般都会有单独存储图片的服务器，通过查阅相关资料，折腾了几天，我选择使用了Fastdfs+Nginx的方式来配置了一台文件存储服务器。 Fastdfs是什么 FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容">
+<meta property="og:description" content="最近在比较闲，就了解了下Fastdfs和Nginx，学习了Fastdfs+Nginx的方式来配置一台文件存储服务器。 Fastdfs是什么 FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容">
 <meta property="og:image" content="https://lifewang.github.io/img/fastdfs/install_package.jpg">
 <meta property="og:image" content="https://lifewang.github.io/img/fastdfs/nginx_success.jpg">
 <meta property="og:updated_time" content="2017-10-09T03:26:22.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fastdfs+Nginx安装配置文件服务器">
-<meta name="twitter:description" content="最近在开发一个电商项目，需要用到图片上传功能。传统得做法是将图片存储在本地路径，但对于大型的网站来说，一般都会有单独存储图片的服务器，通过查阅相关资料，折腾了几天，我选择使用了Fastdfs+Nginx的方式来配置了一台文件存储服务器。 Fastdfs是什么 FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容">
+<meta name="twitter:description" content="最近在比较闲，就了解了下Fastdfs和Nginx，学习了Fastdfs+Nginx的方式来配置一台文件存储服务器。 Fastdfs是什么 FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容">
 <meta name="twitter:image" content="https://lifewang.github.io/img/fastdfs/install_package.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Life的博客" type="application/atom+xml">
@@ -164,7 +164,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近在开发一个电商项目，需要用到图片上传功能。传统得做法是将图片存储在本地路径，但对于大型的网站来说，一般都会有单独存储图片的服务器，通过查阅相关资料，折腾了几天，我选择使用了Fastdfs+Nginx的方式来配置了一台文件存储服务器。</p>
+        <p>最近在比较闲，就了解了下Fastdfs和Nginx，学习了Fastdfs+Nginx的方式来配置一台文件存储服务器。</p>
 <h1 id="Fastdfs是什么"><a href="#Fastdfs是什么" class="headerlink" title="Fastdfs是什么"></a>Fastdfs是什么</h1><blockquote>
 <p>FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。</p>
 </blockquote>
