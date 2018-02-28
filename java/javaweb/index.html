@@ -127,66 +127,66 @@
            	<hr>
 		<h1 id="javaweb知识点"><a href="#javaweb知识点" class="headerlink" title="javaweb知识点"></a>javaweb知识点</h1><hr>
 		<h1 id="jdbc"><a href="#jdbc" class="headerlink" title="jdbc"></a>jdbc</h1>
-    <ul>
+    <p>
       <strong>连接步骤：</strong><br>
-      <li>//第一步，注册驱动程序<br>  
-          //com.MySQL.jdbc.Driver<br>  
-          Class.forName("数据库驱动的完整类名"); </li>
-      <li>//第二步，获取一个数据库的连接<br>   
-          Connection conn = DriverManager.getConnection("连接URL","用户名","密码");</li>
-      <li>//第三步，创建一个会话<br>  
-           Statement stmt=conn.createStatement();</li>
-      <li>//第四步，执行SQL语句，增加，删除，修改记录<br>  
-          stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
-          //或者查询记录<br>  
-          ResultSet rs = stmt.executeQuery("查询记录的SQL语句");</li>
-      <li>//第五步，对查询的结果进行处理<br>  
-          while(rs.next()){<br>  
-          //对记录的操作<br>  
-          }</li>
-      <li>//第六步，关闭连接<br>  
-          rs.close();<br>  
-          stmt.close();<br>  
-          conn.close();</li>
-     </ul>
+      	//第一步，注册驱动程序<br>  
+	//com.MySQL.jdbc.Driver<br>  
+	Class.forName("数据库驱动的完整类名");<br> 
+      	//第二步，获取一个数据库的连接<br>   
+	Connection conn = DriverManager.getConnection("连接URL","用户名","密码");<br>
+      	//第三步，创建一个会话<br>  
+	Statement stmt=conn.createStatement();<br>
+      	//第四步，执行SQL语句，增加，删除，修改记录<br>  
+	stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
+	//或者查询记录<br>  
+	ResultSet rs = stmt.executeQuery("查询记录的SQL语句");<br>
+	//第五步，对查询的结果进行处理<br>  
+	while(rs.next()){<br>  
+	//对记录的操作<br>  
+	}<br>
+	//第六步，关闭连接<br>  
+	rs.close();<br>  
+	stmt.close();<br>  
+	conn.close();
+     </p>
      <hr>
      <h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1>
-     <ul>
+     <p>
 	<strong>DBCP连接池：</strong><br>
-	<li>driverClassName=com.mysql.jdbc.Driver</li>
-	<li>url=jdbc:mysql://localhost:3306/数据库名</li>
-	<li>username=root</li>
-	<li>password=1234</li>
-	<li><!-- 初始化连接大小 --><br>
-	    initialSize=10</li>
-	<li><!-- 最大连接数量 --><br>
-	    maxActive=50</li>
-	<li><!-- 最大空闲连接 --><br>
-	    maxIdle=20</li>
-	<li><!-- 最小空闲连接 --><br>
-	    minIdle=5</li>
-	<li><!-- 获取连接最大等待时间(以毫秒为单位) --><br>
-	    maxWait=60000</li>
-      </ul>
-      <ul>
+	driverClassName=com.mysql.jdbc.Driver<br>
+	url=jdbc:mysql://localhost:3306/数据库名<br>
+	username=root<br>
+	password=1234<br>
+	<!-- 初始化连接大小 --><br>
+	    initialSize=10<br>
+	<!-- 最大连接数量 --><br>
+	    maxActive=50<br>
+	<!-- 最大空闲连接 --><br>
+	    maxIdle=20<br>
+	<!-- 最小空闲连接 --><br>
+	    minIdle=5<br>
+	<!-- 获取连接最大等待时间(以毫秒为单位) --><br>
+	    maxWait=60000
+      </p>
+      <p>
 	<strong>C3P0P连接池：</strong><br>
-	<li>//导入一个核心类<br>  
-        ComboPooledDataSource  dataSource = new ComboPooledDataSource(); </li>
-	<li>dataSource.setDriverClass("com.mysql.jdbc.Driver");</li>
-	<li>dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/数据库名");</li>
-	<li>dataSource.setUser("root");</li>
-	<li>dataSource.setPassword("1234");</li>
-	<li><!-- 初始化连接大小 --><br>
-	    dataSource.setInitialPoolSize(10);</li>
-	<li><!-- 最大连接数量 --><br>
-	    dataSource.setMaxPoolSize(40);</li>
-	<li><!-- 最小连接数 --><br>
-	    dataSource.setMinPoolSize(5);</li>
-	<li><!-- 每次增加的连接数 --><br>
-	    dataSource.setAcquireIncrement(2);</li>
-	<li><!-- 数据库连接 --><br>
-	    Connection conn=dataSource.getConnection();</li>
-      </ul>
+	//导入一个核心类<br>  
+        ComboPooledDataSource  dataSource = new ComboPooledDataSource();<br>
+	dataSource.setDriverClass("com.mysql.jdbc.Driver");<br>
+	dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/数据库名");<br>
+	dataSource.setUser("root");<br>
+	dataSource.setPassword("1234");<br>
+	<!-- 初始化连接大小 --><br>
+	    dataSource.setInitialPoolSize(10);<br>
+	<!-- 最大连接数量 --><br>
+	    dataSource.setMaxPoolSize(40);<br>
+	<!-- 最小连接数 --><br>
+	    dataSource.setMinPoolSize(5);<br>
+	<!-- 每次增加的连接数 --><br>
+	    dataSource.setAcquireIncrement(2);<br>
+	<!-- 数据库连接 --><br>
+	    Connection conn=dataSource.getConnection();
+      </p>
 	<hr>
 	    </div>
 	    <div class="article-info article-info-index">
