@@ -148,33 +148,52 @@
           rs.close();<br>  
           stmt.close();<br>  
           conn.close();</li>
-		</ul>
-		<hr>
-		<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1>
-		<ul>
-    <strong>DBCP连接池：</strong><br>
-		<li>driverClassName=com.mysql.jdbc.Driver</li>
-    <li>url=jdbc:mysql://localhost:3306/数据库名</li>
-    <li>username=root</li>
-    <li>password=1234</li>
-		<li><!-- 初始化连接大小 -->
-		    initialSize=10</li>
-		<li><!-- 连接池最大使用连接数量 -->
-		    maxActive=50</li>
-		<li><!-- 连接池最小空闲 -->
-		    minIdle=5</li>
-		<li><!-- 获取连接最大等待时间 -->
-		    <property name="maxWait" value="60000" /></li>
-		<li>数据库相关：MySQL/SQL Server/Oracle/Redis/MyBatis/Hibernate</li>
-		<li>版本管理、文档和自动化部署工具：Svn/Git/Maven</li>
-		</ul>
-		<hr>
-		    </div>
-		    <div class="article-info article-info-index">
-		      <a href="/resume/index.html" class="archive-article-date">
-			<time datetime="2018-02-10T19:26:22.834Z" itemprop="datePublished"><i class="icon-clock"></i>2018-02-10</time>
-		</a>
-      		<div class="clearfix"></div>
+     </ul>
+     <hr>
+     <h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1>
+     <ul>
+	<strong>DBCP连接池：</strong><br>
+	<li>driverClassName=com.mysql.jdbc.Driver</li>
+	<li>url=jdbc:mysql://localhost:3306/数据库名</li>
+	<li>username=root</li>
+	<li>password=1234</li>
+	<li><!-- 初始化连接大小 --><br>
+	    initialSize=10</li>
+	<li><!-- 最大连接数量 --><br>
+	    maxActive=50</li>
+	<li><!-- 最大空闲连接 --><br>
+	    maxIdle=20</li>
+	<li><!-- 最小空闲连接 --><br>
+	    minIdle=5</li>
+	<li><!-- 获取连接最大等待时间(以毫秒为单位) --><br>
+	    maxWait=60000</li>
+      </ul>
+      <ul>
+	<strong>C3P0P连接池：</strong><br>
+	<li>//导入一个核心类<br>  
+        ComboPooledDataSource  dataSource = new ComboPooledDataSource(); </li>
+	<li>dataSource.setDriverClass("com.mysql.jdbc.Driver");</li>
+	<li>dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/数据库名");</li>
+	<li>dataSource.setUser("root");</li>
+	<li>dataSource.setPassword("1234");</li>
+	<li><!-- 初始化连接大小 --><br>
+	    dataSource.setInitialPoolSize(10);</li>
+	<li><!-- 最大连接数量 --><br>
+	    dataSource.setMaxPoolSize(40);</li>
+	<li><!-- 最小连接数 --><br>
+	    dataSource.setMinPoolSize(5);</li>
+	<li><!-- 每次增加的连接数 --><br>
+	    dataSource.setAcquireIncrement(2);</li>
+	<li><!-- 数据库连接 --><br>
+	    Connection conn=dataSource.getConnection();</li>
+      </ul>
+	<hr>
+	    </div>
+	    <div class="article-info article-info-index">
+	      <a href="/resume/index.html" class="archive-article-date">
+		<time datetime="2018-02-10T19:26:22.834Z" itemprop="datePublished"><i class="icon-clock"></i>2018-02-10</time>
+	</a>
+	<div class="clearfix"></div>
     	</div>
   </div>
 </article>
