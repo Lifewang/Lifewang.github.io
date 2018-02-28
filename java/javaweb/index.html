@@ -157,15 +157,15 @@
 	url=jdbc:mysql://localhost:3306/数据库名<br>
 	username=root<br>
 	password=1234<br>
-	<!-- 初始化连接大小 --><br>
+	//初始化连接大小<br>
 	    initialSize=10<br>
-	<!-- 最大连接数量 --><br>
+	//最大连接数量<br>
 	    maxActive=50<br>
-	<!-- 最大空闲连接 --><br>
+	//最大空闲连接<br>
 	    maxIdle=20<br>
-	<!-- 最小空闲连接 --><br>
+	//最小空闲连接<br>
 	    minIdle=5<br>
-	<!-- 获取连接最大等待时间(以毫秒为单位) --><br>
+	//获取连接最大等待时间(以毫秒为单位)<br>
 	    maxWait=60000
       </p>
       <p>
@@ -176,15 +176,15 @@
 	dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/数据库名");<br>
 	dataSource.setUser("root");<br>
 	dataSource.setPassword("1234");<br>
-	<!-- 初始化连接大小 --><br>
+	//初始化连接大小<br>
 	    dataSource.setInitialPoolSize(10);<br>
-	<!-- 最大连接数量 --><br>
+	//最大连接数量<br>
 	    dataSource.setMaxPoolSize(40);<br>
-	<!-- 最小连接数 --><br>
+	//最小连接数<br>
 	    dataSource.setMinPoolSize(5);<br>
-	<!-- 每次增加的连接数 --><br>
+	//每次增加的连接数<br>
 	    dataSource.setAcquireIncrement(2);<br>
-	<!-- 数据库连接 --><br>
+	//数据库连接<br>
 	    Connection conn=dataSource.getConnection();
       </p>
 	<hr>
