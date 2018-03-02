@@ -295,11 +295,13 @@
       <h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1>
       <p>
 	<strong>GC：</strong>垃圾回收，使用 GC 可以进行垃圾空间释放操作。<br>
+	<strong>垃圾回收器的基本原理：</strong>对于 GC 来说，当程序员创建对象时，GC 就开始监控这个对象的地址、大小以及使用情况。通常，GC 采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是"可达的"，哪些对象是"不可达的"。当 GC 确定一些对象为"不可达"时，GC 就有责任回收这些内存空间。<br>
 	<strong>垃圾回收的好处：</strong><br>
 		1、可以有效的防止内存泄露；<br>
 	        2、有效的使用可以使用的内存。<br>
 	<strong>两种垃圾回收机制：</strong>自动回收和手工调用 System.gc()方法<br>
 	      调用 System.gc 就相当于调用了Runtime.getRuntime().gc()方法<br>
+	      但是需要注意的是---程序员可以手动执行 System.gc()，通知 GC 运行，但是 Java 语言规范并不保证 GC 一定会执行。
       </p>
 		
 		
