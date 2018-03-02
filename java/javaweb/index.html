@@ -187,9 +187,9 @@
 	//数据库连接<br>
 	    Connection conn=dataSource.getConnection();
       </p>
-		
+	
+      <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1>
       <p>
-	<strong>Git命令：</strong><br>
 	//克隆<br>  
         git clone SSH/HTTPS路径<br>
 	//切换分支<br>
@@ -215,9 +215,9 @@
 	git rm -r --cached .mymetdata<br>
 	git rm -r --cached target/*<br>
       </p>
-		
+	
+      <h1 id="linux基本日常操作"><a href="#linux基本日常操作" class="headerlink" title="linux基本日常操作"></a>linux基本日常操作</h1>
       <p>
-	<strong>linux基本日常操作：</strong><br>
 	建立目录：mkdir<br>
 	删除空目录：rmdir<br>
 	删处文件：rm<br>
@@ -230,6 +230,35 @@
 	杀死进程：kill<br>
 	关机：halt<br>
 	重启：reboot<br>
+      </p>
+		
+      <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1>
+      <p>
+	<strong>实现线程的方法：</strong>
+	两种实现线程的方法：继承Thread类与实现Runnable接口，用 synchronized 关键字修饰同步方法<br>
+	两种实现同步的方法：synchronized，wait和notify<br>
+	      
+	第一种：<br>
+	new Thread(){}.start();<br>
+	这表示调用 Thread 子类对象的 run 方法，new Thread(){}表示一个Thread 的匿名子类的实例对象，子类加上 run 方法后的代码如下：<br>
+	new Thread(){<br>
+	public void run(){}<br>
+	}.start();<br>
+	      
+	第二种：<br>
+	new Thread(new Runnable(){}).start();<br>
+	这表示调用 Thread 对象接受的 Runnable 对象的 run 方法，new Runnable(){}表示一个 Runnable 的匿名子类的实例对象,runnable 的子类加上 run 方法后的代码如下：<br>
+	new Thread(new Runnable(){<br>
+	public void run(){}<br>
+	}).start();<br>
+	      
+	<strong>反对使用stop()和 suspend()方法：</strong>
+	stop()方法是不安全的，它会解除由线程获取的所有锁定<br>
+	suspend()方法容易发生死锁<br>
+	
+	<strong>sleep()和wait()：</strong>
+	sleep：Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不释放同步锁<br>
+	wait：Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()释放同步缩<br>
       </p>
 		
 		
