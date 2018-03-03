@@ -357,7 +357,7 @@
 	      所谓闭包：在一个函数作用域中 保留 它上级作用域的局部变量，这些局部变量不会随着上级函数的执行完毕而被销毁（个人理解）。<br>
 	      简单的理解闭包：子函数可以使用父函数的局部变量（包括参数，因为参数也是局部变量）。<br>
 	<span>js文件中引用其他js文件：</span><br>
-	      1、在调用文件的顶部加入下例代码：document.write(”<script language=javascript src='/js/2.js'><\/script>”)。<br>
+	      1、在调用文件的顶部加入下例代码：//document.write("<script language=javascript src='/js/2.js'><\/script>")。<br>
 	      2、将下边代码放入Body中：new_element=document.createElement(”script”);<br> 
 		      &nbsp;&nbsp;new_element.setAttribute(”type”,”text/javascript”);<br> 
 	      	      &nbsp;&nbsp;new_element.setAttribute(”src”,”2.js”);<br> 
