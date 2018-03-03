@@ -190,6 +190,9 @@
 	//数据库连接<br>
 	    Connection conn=dataSource.getConnection();
       </p>
+      <p>
+	<strong>key/value数据库：</strong>Redis是一个Key-Value存储系统<br>
+      </p>
 		
 		
 	<hr>
@@ -241,6 +244,7 @@
 	杀死进程：kill<br>
 	关机：halt<br>
 	重启：reboot<br>
+	在vi中，删除光标所在行的快捷键：dd<br>
       </p>
 		
 		
@@ -335,7 +339,41 @@
 	<strong>实例变量（成员变量）：</strong><br>
 	      final修饰的实例变量（成员变量）没有默认值，必须在 constructor (构造器)结束之前被赋予一个明确的值。<br>
 	      例如：final int i = 0;<br>
-      </p>	
+      </p>
+		
+		
+	<hr>
+      <h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1>
+      <p>
+	<strong>CSS：</strong><br>
+	css盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。<br>
+	<strong>JS：</strong><br>
+	<span>js库：</span><br>
+	      1、moment.js：用js转换时间戳为日期。<br>
+	      2、chart.js：绘制简单的柱状图，曲线图，蛛网图，环形图，饼图等完全够用，用法比较简单。<br>
+	      3、Rx.js：很好的解决了异步和事件组合的问题。<br>
+	      3、lodash.js：封装了很多javascipt数组，字符串，集合，函数等处理的函数。<br>
+	<span>js闭包：</span><br>
+	      所谓闭包：在一个函数作用域中 保留 它上级作用域的局部变量，这些局部变量不会随着上级函数的执行完毕而被销毁（个人理解）。<br>
+	      简单的理解闭包：子函数可以使用父函数的局部变量（包括参数，因为参数也是局部变量）。<br>
+	<span>js文件中引用其他js文件：</span><br>
+	      1、在调用文件的顶部加入下例代码：document.write(”<script language=javascript src='/js/2.js'><\/script>”)。<br>
+	      2、将下边代码放入Body中：new_element=document.createElement(”script”);<br> 
+		      &nbsp;&nbsp;new_element.setAttribute(”type”,”text/javascript”);<br> 
+	      	      &nbsp;&nbsp;new_element.setAttribute(”src”,”2.js”);<br> 
+	      	      &nbsp;&nbsp;document.body.appendChild(new_element);<br> 
+      </p>
+		
+		
+		
+	<hr>
+      <h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1>
+      <p>
+	<strong>查看浏览器内核:</strong>打开浏览器，随便打开一个页面，按F12，或者快捷键shift+ctrl+i，即可打开开发者工具——》Console。<br>
+	<strong>查看产品代号：<strong>在console下输入navigator.appCodeName，回车即可返回浏览器产品代号。<br>
+	<strong>查看版本号，操作系统和应用程序版本号：<strong>在控制台输入“navigator.appVersion”回车即可返回信息。<br>
+	谷歌的浏览器的内核是webkit内核。<br>
+      </p>
 		
 		
 		
