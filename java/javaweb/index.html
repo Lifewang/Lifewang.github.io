@@ -190,9 +190,6 @@
 	//数据库连接<br>
 	    Connection conn=dataSource.getConnection();
       </p>
-      <p>
-	<strong>key/value数据库：</strong>Redis是一个Key-Value存储系统<br>
-      </p>
 		
 		
 		
@@ -264,8 +261,8 @@
       <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1>
       <p>
 	<strong>实现线程的方法：</strong>
-	两种实现线程的方法：继承Thread类与实现Runnable接口，用 synchronized 关键字修饰同步方法<br>
-	两种实现同步的方法：synchronized，wait和notify<br>
+	两种实现线程的方法----1、继承Thread类与实现Runnable接口，2、用 synchronized 关键字修饰同步方法<br>
+	两种实现同步的方法----1、synchronized，2、wait和notify<br>
 	      
 	第一种：<br>
 	new Thread(){}.start();<br>
@@ -286,8 +283,8 @@
 	suspend()方法容易发生死锁<br>
 	
 	<strong>sleep()和wait()：</strong>
-	sleep：Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不释放同步锁<br>
-	wait：Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()释放同步缩<br>
+	sleep----Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不释放同步锁<br>
+	wait----Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()释放同步缩<br>
       </p>
 		
 		
@@ -321,8 +318,6 @@
 	      java.awt；<br>
 	      javax.swing；<br>
 	      java.text<br>
-	<strong>常用的接口：</strong><br>
-	      List，Map，Servlet，HttpSession，Iterator，Remote，HttpServletRequest，HttpServletResponse<br>
       </p>
 		
 		
@@ -406,10 +401,7 @@
 	         &nbsp;&nbsp;&nbsp;     System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());<br> 
 		 }<br>
 	<strong>遍历列表中的li，并alert出来：<strong><br>
-	for(i=0;i<m;i++){<br>
-        &nbsp;&nbsp;&nbsp;     ///alert($(".serv_list li:eq("+i+") .instances .num").html());<br> 
-	&nbsp;&nbsp;&nbsp;     ///alert($(".serv_list li:eq("+i+") .error .num").html());<br>
-	}<br>
+	<link rel="li" href="/li.png"><br>
       </p>
 		
 		
