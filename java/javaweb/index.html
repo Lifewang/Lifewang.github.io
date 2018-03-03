@@ -195,6 +195,18 @@
       </p>
 		
 		
+		
+	<hr>
+     <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1>
+      <p>
+	<strong>key/value数据库：</strong>Redis是一个Key-Value存储系统<br>
+	<strong>查询表A（id,name,age）中name重复值及次数，按重复次数从大到小排序(感觉存在问题)：</strong><br>
+	      select A.name from table A, (select A, Count(A) OrderA from Table group by A) b where A.A = b.A  order by b.A desc<br>
+      </p>
+		
+		
+		
+		
 	<hr>
       <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1>
       <p>
@@ -363,9 +375,9 @@
 	<hr>
       <h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1>
       <p>
-	<strong>查看浏览器内核:</strong>打开浏览器，随便打开一个页面，按F12，或者快捷键shift+ctrl+i，即可打开开发者工具——》Console。<br>
-	<strong>查看产品代号：<strong>在console下输入navigator.appCodeName，回车即可返回浏览器产品代号。<br>
-	<strong>查看版本号，操作系统和应用程序版本号：<strong>在控制台输入“navigator.appVersion”回车即可返回信息。<br>
+	<strong>查看浏览器内核：</strong>打开浏览器，随便打开一个页面，按F12，或者快捷键shift+ctrl+i，即可打开开发者工具——》Console。<br>
+	<strong>查看产品代号：</strong>在console下输入navigator.appCodeName，回车即可返回浏览器产品代号。<br>
+	<strong>查看版本号，操作系统和应用程序版本号：</strong>在控制台输入“navigator.appVersion”回车即可返回信息。<br>
 	谷歌的浏览器的内核是webkit内核。<br>
       </p>
 		
@@ -395,8 +407,8 @@
 		 }<br>
 	<strong>遍历列表中的li，并alert出来：<strong><br>
 	for(i=0;i<m;i++){<br>
-        &nbsp;&nbsp;&nbsp;     alert($(".serv_list li:eq("+i+") .instances .num").html());<br> 
-	&nbsp;&nbsp;&nbsp;     alert($(".serv_list li:eq("+i+") .error .num").html());<br>
+        &nbsp;&nbsp;&nbsp;     ///alert($(".serv_list li:eq("+i+") .instances .num").html());<br> 
+	&nbsp;&nbsp;&nbsp;     ///alert($(".serv_list li:eq("+i+") .error .num").html());<br>
 	}<br>
       </p>
 		
