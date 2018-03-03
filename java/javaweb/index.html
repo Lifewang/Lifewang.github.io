@@ -356,12 +356,6 @@
 	<span>js闭包：</span><br>
 	      所谓闭包：在一个函数作用域中 保留 它上级作用域的局部变量，这些局部变量不会随着上级函数的执行完毕而被销毁（个人理解）。<br>
 	      简单的理解闭包：子函数可以使用父函数的局部变量（包括参数，因为参数也是局部变量）。<br>
-	<span>js文件中引用其他js文件：</span><br>
-	      1、在调用文件的顶部加入下例代码：//document.write("<script language=javascript src='/js/2.js'><\/script>")。<br>
-	      2、将下边代码放入Body中：new_element=document.createElement(”script”);<br> 
-		      &nbsp;&nbsp;new_element.setAttribute(”type”,”text/javascript”);<br> 
-	      	      &nbsp;&nbsp;new_element.setAttribute(”src”,”2.js”);<br> 
-	      	      &nbsp;&nbsp;document.body.appendChild(new_element);<br> 
       </p>
 		
 		
@@ -373,6 +367,37 @@
 	<strong>查看产品代号：<strong>在console下输入navigator.appCodeName，回车即可返回浏览器产品代号。<br>
 	<strong>查看版本号，操作系统和应用程序版本号：<strong>在控制台输入“navigator.appVersion”回车即可返回信息。<br>
 	谷歌的浏览器的内核是webkit内核。<br>
+      </p>
+		
+		
+	<hr>
+      <h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1>
+      <p>
+	<strong>遍历map的方法:</strong><br>
+	      <span>方法一（只遍历键或者值）</span><br>
+		 //遍历map中的键 <br>
+		 for (Integer key : map.keySet())<br>
+		 {<br>                    
+		 &nbsp;&nbsp;&nbsp;    System.out.println("Key = " + key);<br>                    
+		 }<br>                    
+		 //遍历map中的值<br>                
+		 for (Integer value : map.values())<br>
+		 {<br>            
+		 &nbsp;&nbsp;&nbsp;     System.out.println("Value = " + value);<br>        
+		 }<br>
+	      <span>方法二（Iterator遍历）</span><br>
+		 Map<Integer, Integer> map = new HashMap<Integer, Integer>(); <br>
+		 Iterator<Map.Entry<Integer, Integer>> entries = map.entrySet().iterator();<br>
+		 while (entries.hasNext())<br>                    
+		 {<br>            
+		 &nbsp;&nbsp;&nbsp;     Map.Entry<Integer, Integer> entry = entries.next();<br> 
+	         &nbsp;&nbsp;&nbsp;     System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());<br> 
+		 }<br>
+	<strong>遍历列表中的li，并alert出来：<strong><br>
+	for(i=0;i<m;i++){<br>
+        &nbsp;&nbsp;&nbsp;     alert($(".serv_list li:eq("+i+") .instances .num").html());<br> 
+	&nbsp;&nbsp;&nbsp;     alert($(".serv_list li:eq("+i+") .error .num").html());<br>
+	}<br>
       </p>
 		
 		
