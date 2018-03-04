@@ -378,6 +378,20 @@
 		
 		
 	<hr>
+      <h1 id="WebService"><a href="#WebService" class="headerlink" title="WebService"></a>WebService</h1>
+      <p>
+	简单的说：WebService即Web服务，它是一种跨编程语言和跨操作系统平台的远程调用技术。<br>
+	Web服务：基于HTTP和XML的技术，HTTP是互联网上应用最为广泛的一种网络协议，而XML是跨平台的基础。<br>
+	<strong>WebService的三要素：</strong><br>
+	      SOAP (Simple Object Access Protocol)：简易对象访问协议，soap用来描述传递信息的格式。<br>
+	      WSDL (WebServices Description Language)：Web服务描述语言，用来描述如何访问具体的接口。<br>
+	      UDDI (Universal Description Discovery and Integration)：通用描述、发现及整合，用来管理、分发、查询webService。<br>
+	Web Service主要是为了使原来各孤立的站点之间的信息能够相互通信、共享而提出的一种接口。 Web Service所使用的是Internet上统一、开放的标准，如HTTP、XML、SOAP（简单对象访问协议）、WSDL等，所以Web Service可以在任何支持这些标准的环境（Windows,Linux）中使用。注：SOAP协议（Simple Object Access Protocal,简单对象访问协议）,它是一个用于分散和分布式环境下网络信息交换的基于XML的通讯协议。在此协议下，软件组件或应用程序能够通过标准的HTTP协议进行通讯。它的设计目标就是简单性和扩展性，这有助于大量异构程序和平台之间的互操作性，从而使存在的应用程序能够被广泛的用户访问。<br>
+	   
+      </p>
+		
+		
+	<hr>
       <h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1>
       <p>
 	<strong>遍历map的方法：</strong><br>
@@ -409,7 +423,7 @@
       <p>
 	<strong>懒加载：</strong><br>
 	简述：当我们查询一个对象的时候，在默认情况下，返回的只是该对象的代理对象，当用户去使用该对象的属性时，才会向数据库再一次发出查询语句。<br>
-	例如，有一个对象是Employee，还有一个对象是Department。显然，对于Employee相对Department来说，是多对一的关系；而对于Department相对Employee来说，是一对多的关系。当我们查询Employee对象的时候，如果希望通过employee对象的属性department查询到所对应的Department，那么是会抛出异常的。这是因为懒加载的存在，在session关闭之后，hibernate又向数据库发出一次请求，结果就抛出异常了。<br><br>
+	例如，有一个对象是Employee，还有一个对象是Department。显然，对于Employee相对Department来说，是多对一的关系；而对于Department相对Employee来说，是一对多的关系。当我们查询Employee对象的时候，如果希望通过employee对象的属性department查询到所对应的Department，那么是会抛出异常的。这是因为懒加载的存在，在session关闭之后，hibernate又向数据库发出一次请求，结果就抛出异常了。<br>
 	解决方法：1、使用过滤器（web项目）<br>
 	----获取session的方式必须使用getCurrentSession <br>
 	----特殊的关闭session方式<br>
@@ -418,6 +432,26 @@
 	在SSH框架中，使用spring提供的openSessionView<br>
 	其原理和第三种方法中使用Filter类似，只不过这个filter是spring提供的。使用时只需要在web.xml文件配置如下：<br>
 	<div><img src="/img/java/ssh.png" alt="懒加载"/></div><br>  
+	Hibernate框架，数据库的移植变的非常方便，当项目目前使用的是mysql数据库，但又想换成Oracle数据库，这时只需要改变一下数据库方言即可搞定
+      </p>
+	      
+	 <hr>
+      <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1>
+      <p>
+	<strong>IOC（控制反转）：</strong><br>
+	IOC是指在应用程序中对象的创建、销毁等不再由程序本身的编码实现，而是由外部的Spring容器在程序运行时根据需要注入到程序中，也就是对象的生命周期不是由程序本身来决定，而是由容器来控制，所以称之为控制反转。这种控制权转移所带来的好处就是降低对象之间的依赖关系，即解耦。<br>
+	Ioc就是解决了一般业务对象之间、业务对象与持久层之间存在的各种依赖关系。 <br>
+	<strong>AOP（面向切面编程）：</strong><br>
+	AOP可以说是OOP（面向对象编程，Object-Oriented-Programing）的完善和补充。OOP允许定义从上到下的关系，但并不适合定义从左到右的关系。比如日志功能。日志功能的代码往往水平地散布在所有对象层次中，而与它所散布到的对象的核心功能毫无关系。这种散布在各处的无关的代码被称之为横切（cross-cutting）代码，在面向对象的设计中，这种设计导致了大量代码的重复，出现冗余，提高了维护成本，而不利于各个模块的重用。而AOP技术则恰恰相反，它是利用一种称之为"横切"的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块中，并且将其命名为"Aspect"，即切面。这所谓的"切面"，简而言之，就是把那些个那些与业务无关的，却为业务模块所共同公共调用的逻辑或者责任封装起来，进而便于减少系统的重复代码量，并且能够降低模块间的耦合度，并有利于未来的可操作性和可维护性，降低了维护成本。<br>
+	IOC:控制反转也叫依赖注入，IOC利用java反射机制，AOP利用代理模式。所谓控制反转是指，本来被调用者的实例是有调用者来创建的，这样的缺点是耦合性太强，IOC则是统一交给spring来管理创建，将对象交给容器管理，你只需要在spring配置文件总配置相应的bean，以及设置相关的属性，让spring容器来生成类的实例对象以及管理对象。在spring容器启动的时候，spring会把你在配置文件中配置的bean都初始化好，然后在你需要调用的时候，就把它已经初始化好的那些bean分配给你需要调用这些bean的类。<br>  
+        Spring 的 AOP 代理是完全由 Spring 的 IoC 容器负责生成、管理的，其依赖关系也由 IoC 容器负责管理。因此，AOP 代理可以直接使用容器中的其他 Bean 实例作为目标，这种关系可由 IoC 容器的依赖注入提供。<br>
+      </p>
+	      
+	      
+	 <hr>
+      <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1>
+      <p>
+	Mybatis 也是对jdbc的封装，可以在配置文件中写sql语句，可以根据需求定制sql语句，数据优化起来较hibernate容易很多，但可移植性也不是很好。<br>
       </p>
 		
 
