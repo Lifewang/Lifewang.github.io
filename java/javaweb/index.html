@@ -408,10 +408,9 @@
       <h1 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h1>
       <p>
 	<strong>懒加载:</strong><br>
-	      <strong>简述：</strong><br>
-		 当我们查询一个对象的时候，在默认情况下，返回的只是该对象的代理对象，当用户去使用该对象的属性时，才会向数据库再一次发出查询语句。<br>
-		 例如，有一个对象是Employee，还有一个对象是Department。显然，对于Employee相对Department来说，是多对一的关系；而对于Department相对Employee来说，是一对多的关系。当我们查询Employee对象的时候，如果希望通过employee对象的属性department查询到所对应的Department，那么是会抛出异常的。这是因为懒加载的存在，在session关闭之后，hibernate又向数据库发出一次请求，结果就抛出异常了。<br>
-	      <strong>解决方法：</strong><br>1、使用过滤器（web项目）<br>
+	      简述：当我们查询一个对象的时候，在默认情况下，返回的只是该对象的代理对象，当用户去使用该对象的属性时，才会向数据库再一次发出查询语句。<br>
+	      例如，有一个对象是Employee，还有一个对象是Department。显然，对于Employee相对Department来说，是多对一的关系；而对于Department相对Employee来说，是一对多的关系。当我们查询Employee对象的时候，如果希望通过employee对象的属性department查询到所对应的Department，那么是会抛出异常的。这是因为懒加载的存在，在session关闭之后，hibernate又向数据库发出一次请求，结果就抛出异常了。<br>
+	      解决方法：1、使用过滤器（web项目）<br>
 		 ①获取session的方式必须使用getCurrentSession <br>
 		 ②特殊的关闭session方式<br>
 		<div><img src="/img/java/session.png" alt="懒加载"></div><br>
