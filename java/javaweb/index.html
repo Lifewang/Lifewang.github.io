@@ -261,8 +261,7 @@
       <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1>
       <p>
 	<strong>实现线程的方法：</strong><br>
-	两种实现线程的方法----1、继承Thread类，2、实现Runnable接口<br>
-	两种实现同步的方法----1、synchronized，2、wait和notify<br>
+	两种----1、继承Thread类，2、实现Runnable接口<br>
 	      
 	第一种：<br>
 	new Thread(){}.start();<br>
@@ -281,11 +280,21 @@
 	<strong>反对使用stop()和 suspend()方法：</strong><br>
 	stop()方法是不安全的，它会解除由线程获取的所有锁定<br>
 	suspend()方法容易发生死锁<br>
-	
-	<strong>sleep()和wait()：</strong><br>
-	sleep----Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不释放同步锁<br>
-	wait----Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()释放同步缩<br>
       </p>
+		
+	<hr>	
+      <h1 id="同步方法和同步代码块"><a href="#同步方法和同步代码块" class="headerlink" title="同步方法和同步代码块"></a>同步方法和同步代码块</h1>
+      <p>
+	<strong>同步方法：</strong><br>
+	两种实现方法----1、synchronized，2、wait和notify<br>
+	同步方法默认用 this 或者当前类 class 对象作为锁<br>
+	<strong>同步代码块：</strong><br>
+	      
+	<strong>sleep()和wait()：</strong><br>
+	sleep----Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不会释放同步锁<br>
+	wait----Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()会释放同步锁<br>
+      </p>
+		
 		
 		
 	<hr>
@@ -447,6 +456,45 @@
       <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1>
       <p>
 	Mybatis 也是对jdbc的封装，可以在配置文件中写sql语句，可以根据需求定制sql语句，数据优化起来较hibernate容易很多，但可移植性也不是很好。<br>
+      </p>
+	      
+	      
+	 <hr>
+      <h1 id="方法重载(Overloading)和方法覆盖(Overriding)"><a href="#方法重载(Overloading)和方法覆盖(Overriding)" class="headerlink" title="方法重载(Overloading)和方法覆盖(Overriding)"></a>方法重载(Overloading)和方法覆盖(Overriding)</h1>
+      <p>
+          <strong>方法重载(Overloading)：</strong><br>
+	  重载是一个类中多态性的一种表现。<br>
+	  如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。<br>
+	  <strong>方法覆盖(Overriding)：</strong><br>
+	  重写是父类与子类之间多态性的一种表现。<br>
+	  方法覆盖是说子类重新定义了父类的方法。方法覆盖必须有相同的方法名，参数列表和返回类型。覆盖者可能不会限制它所覆盖的方法的访问。<br>
+      </p>
+	      
+	      
+	   <hr>
+      <h1 id="接口和抽象类"><a href="#接口和抽象类" class="headerlink" title="接口和抽象类"></a>接口和抽象类</h1>
+      <p>
+          <strong>相同点：</strong><br>
+	  1、都不能被实例化；<br>
+	  2、接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后，才能被实例化。<br>
+	  <strong>不同点(Overriding)：</strong><br>
+	  1、接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法；<br>
+	  2、类可以实现很多个接口，但是只能继承一个抽象类；<br>
+	  3、接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法；<br>
+	  4、接口中定义的成员变量默认修饰符为public static final（静态不能被修改），而且必须给其赋初值。抽象类可以有自己的数据成员变量，也可以有非抽象的成员变量，而且抽象类中的成员变量默认为default(本包可见)。抽象类中的方法前面有abstract修饰，不能用private、static、synchronize、native修饰，同时方法必须以分号结尾，不带花括号；<br>
+      </p>
+	      
+	      
+	   <hr>
+      <h1 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h1>
+      <p>
+          <strong>基本数据类型：</strong><br>
+	  8种基本类型：整数型---byte、shrot、int、long、har，浮点型---float、double，字符型---char，布尔型---bollean<br>
+	  <strong>引用数据类型：</strong><br>
+	  3种引用类型：<br>
+	  1、类class ，就是自己定义的数据结构，还有一些java类库中的：包括string，date等；<br>
+	  2、接口interface；<br>
+	  3、数组array<br>
       </p>
 		
 
