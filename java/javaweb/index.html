@@ -260,8 +260,8 @@
 	<hr>	
       <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1>
       <p>
-	<strong>实现线程的方法：</strong>
-	两种实现线程的方法----1、继承Thread类与实现Runnable接口，2、用 synchronized 关键字修饰同步方法<br>
+	<strong>实现线程的方法：</strong><br>
+	两种实现线程的方法----1、继承Thread类，2、实现Runnable接口<br>
 	两种实现同步的方法----1、synchronized，2、wait和notify<br>
 	      
 	第一种：<br>
@@ -278,11 +278,11 @@
 	public void run(){}<br>
 	}).start();<br>
 	      
-	<strong>反对使用stop()和 suspend()方法：</strong>
+	<strong>反对使用stop()和 suspend()方法：</strong><br>
 	stop()方法是不安全的，它会解除由线程获取的所有锁定<br>
 	suspend()方法容易发生死锁<br>
 	
-	<strong>sleep()和wait()：</strong>
+	<strong>sleep()和wait()：</strong><br>
 	sleep----Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不释放同步锁<br>
 	wait----Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()释放同步缩<br>
       </p>
@@ -295,7 +295,8 @@
 	      String，Integer，List，HashMap，java.util.Date，BufferedReader，BufferedWriter，FileReader，FileWirter，System，Class<br>
 	<strong>常用的包：</strong><br>
 	      java.lang（Object、Math、String、StringBuffer）；<br>
-	      java.io，java.util（Date、日历类Calendar、随机数类Random、List接口、Collection接口、Set接口、Map接口）；<br>
+	      java.io；<br>
+	      java.util（Date、日历类Calendar、随机数类Random、List接口、Collection接口、Set接口、Map接口）；<br>
 	      java.sql；<br>
 	      java.net（InetAddress）；<br>
 	      java.awt；<br>
@@ -312,12 +313,6 @@
 	<strong>两种类型的流：</strong>字节流，字符流。<br>
 		字节流继承于 InputStream 和 OutputStream；<br>
 	        字符流继承于 InputStreamReader 和 OutputStreamWriter<br>
-	      java.io，java.util（Date、日历类Calendar、随机数类Random、List接口、Collection接口、Set接口、Map接口）；<br>
-	      java.sql；<br>
-	      java.net（InetAddress）；<br>
-	      java.awt；<br>
-	      javax.swing；<br>
-	      java.text<br>
       </p>
 		
 		
