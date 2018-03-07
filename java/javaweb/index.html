@@ -501,6 +501,59 @@
 	  2、接口interface；<br>
 	  3、数组array<br>
       </p>
+	      
+	      
+	  <hr>
+      <h1 id="ArrayList和LinkedList"><a href="#ArrayList和LinkedList" class="headerlink" title="ArrayList和LinkedList"></a>ArrayList和LinkedList</h1>
+      <p>
+	  ArrayList 和 LinkedList 都实现了 List 接口<br>
+          <strong>ArrayList：</strong>
+	  底层是数组，查询速度快。<br>
+	  <strong>LinkedList：</strong>
+	  以元素列表的形式存储它的数据，每一个元素都和它的前一个和后一个元素链接在一起，在这种情况下，查找某个元素的时间长；相对于 ArrayList，LinkedList 的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引。<br>
+      </p>
+	      
+	      
+	      <hr>
+      <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1>
+      <p>
+	  主要分四大选择器，分别是基本选择器、层次选择器、过滤选择器、属性过滤选择器。<br>
+	  常用的选择器分为以下几种。<br>	
+          <strong>基本选择器：</strong><br>
+	  Id 选择器、class 选择器、element 选择器、*选择器、并列选择器。<br>
+	  <strong>层次选择器：</strong><br>
+	  parent > child（直系子元素）<br>
+	  prev + next（下一个兄弟元素，等同于 next()方法）<br>
+	  prev ~ siblings（prev 元素的所有兄弟元素，等同于 nextAll()方法）<br>
+	  <strong>过滤选择器：</strong><br>
+	  first 和:last（取第一个元素或最后一个元素）<br>
+	  even 和:odd（取偶数索引或奇数索引元素，索引从 0 开始，even 表示偶数，odd 表示奇数）<br>
+	  t（取非元素）<br>
+	  eq(x) （取指定索引的元素）<br>
+	  gt(x)和:lt(x)（取大于 x 索引或小于 x 索引的元素）<br>
+	  header（取 H1~H6 标题元素）。<br>
+      </p>
+	      
+	       <hr>
+      <h1 id="Cookie&Session"><a href="#Cookie&Session" class="headerlink" title="Cookie&Session"></a>Cookie&Session</h1>
+      <p>
+	  会话（Session）跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用的会话跟踪技术是 Cookie与Session。Cookie 通过在客户端记录信息确定用户身份，Session 通过在服务器端记录信息确定用户身份。<br>
+	  <strong>Cookie：</strong><br>
+	  Cookie 实际上是一小段的文本信息。客户端请求服务器，如果服务器需要记录该用户状态，就使用 response 向客户端浏览器颁发一个 Cookie。客户端浏览器会把 Cookie 保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该 Cookie 一同提交给服务器。服务器检查该 Cookie，以此来辨认用户状态。服务器还可以根据需要修改 Cookie 的内容。<br>
+	  <strong>Session：</strong><br>
+	  Session 是另一种记录客户状态的机制，不同的是 Cookie 保存在客户端浏览器中，而 Session保存在服务器上。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是 Session。客户端浏览器再次访问时只需要从该 Session 中查找该客户的状态就可以了。<br>
+	  如果说 Cookie 机制是通过检查客户身上的“通行证”来确定客户身份的话，那么 Session 机制就是通过检查服务器上的“客户明细表”来确认客户身份。Session 相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。<br>
+	  
+	      prev + next（下一个兄弟元素，等同于 next()方法）<br>
+	  prev ~ siblings（prev 元素的所有兄弟元素，等同于 nextAll()方法）<br>
+	  <strong>过滤选择器：</strong><br>
+	  first 和:last（取第一个元素或最后一个元素）<br>
+	  even 和:odd（取偶数索引或奇数索引元素，索引从 0 开始，even 表示偶数，odd 表示奇数）<br>
+	  t（取非元素）<br>
+	  eq(x) （取指定索引的元素）<br>
+	  gt(x)和:lt(x)（取大于 x 索引或小于 x 索引的元素）<br>
+	  header（取 H1~H6 标题元素）。<br>
+      </p>
 		
 
 		
