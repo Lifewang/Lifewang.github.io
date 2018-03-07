@@ -276,15 +276,8 @@
 	new Thread(new Runnable(){<br>
 	public void run(){}<br>
 	}).start();<br>
+	
 	      
-	<strong>反对使用stop()和 suspend()方法：</strong><br>
-	stop()方法是不安全的，它会解除由线程获取的所有锁定<br>
-	suspend()方法容易发生死锁<br>
-      </p>
-		
-	<hr>	
-      <h1 id="同步方法和同步代码块"><a href="#同步方法和同步代码块" class="headerlink" title="同步方法和同步代码块"></a>同步方法和同步代码块</h1>
-      <p>
 	<strong>同步方法：</strong><br>
 	两种实现方法----1、synchronized，2、wait和notify<br>
 	同步方法默认用 this 或者当前类 class 对象作为锁<br>
@@ -293,9 +286,18 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;//同步代码块<br>
 	&nbsp;&nbsp;}<br>
 	其中obj就是同步监视器，它的含义是：线程开始执行同步代码块之前，必须先获得对同步监视器的锁定。任何时刻只能有一个线程可以获得对同步监视器的锁定，当同步代码块执行完成后，该线程会释放对该同步监视器的锁定。虽然java程序允许使用任何对象作为同步监视器，但 是同步监视器的目的就是为了阻止两个线程对同一个共享资源进行并发访问，因此通常推荐使用可能被并发访问的共享资源充当同步监视器。<br>      
+	
+	      
+	            
+	<strong>反对使用stop()和 suspend()方法：</strong><br>
+	stop()方法是不安全的，它会解除由线程获取的所有锁定<br>
+	suspend()方法容易发生死锁<br>
+	      
 	<strong>sleep()和wait()：</strong><br>
 	sleep----Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不会释放同步锁<br>
 	wait----Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()会释放同步锁<br>
+	<strong>避免死锁的方式：</strong><br>      
+	指定获取锁的顺序，并强制线程按照指定的顺序获取锁。因此，如果所有的线程都是以同样的顺序加锁和释放锁，就不会出现死锁了。<br>      
       </p>
 		
 		
