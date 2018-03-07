@@ -430,6 +430,54 @@
 	<hr>
       <h1 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h1>
       <p>
+	<strong>Hibernate 的核心API接口：</strong><br>      
+	Configuration 接口：配置 Hibernate,根启动 Hibernate，创建 SessionFactory 对象。<br>
+	SessionFactory 接口：初始化 Hibernate，充当数据存储源的代理，创建 Session 对象。<br>
+	Session 接口：负责保存、更新、删除、加载和查询对象。<br>
+	Transaction 接口：管理事务。<br>
+	Query 和 Criteria 接口：执行数据库查询。   <br>
+	      
+	<strong>Configuration 接口：</strong><br> 
+	Configuration 对象用于配置并且启动 Hibernate。Hibernate 应用通过 Configuration 实例来指定对象-关系映射文件的位置或者动态配置 Hibernate 的属性，然后创建 SessionFactory 实例。<br>
+	<strong>SessionFactory 接口：</strong><br> 
+	一个 SessionFactory 实例对应一个数据存储源，应用从 SessionFactory 中获得 Session 实例。<br>
+	SessionFactory 有以下特点：<br>
+	它是线程安全的，这意味着它的同一个实例可以被应用的多个线程共享。<br>
+	它是重量级的，这意味着不能随意创建或销毁它的实例。如果应用只访问一个数据库，只需
+	要创建一个 SessionFactory 实例，在应用初始化的时候创建该实例。如果应用同时访问多个
+	数据库，则需要为每个数据库创建一个单独的 SessionFactory 实例。
+	之所以称 SessionFactory 是重量级的，是因为它需要一个很大的缓存，用来存放预定义的
+	SQL 语句以能映射元数据等。用户还可以为 SesionFactory 配置一个缓存插件，这个缓存插
+	件被称为 Hibernate 的第二级缓存。，该缓存用来存放被工作单元读过的数据，将来其他工
+	作单元可能会重用这些数据，因此这个缓存中的数据能够被所有工作单元共享。一个工作单
+	元通常对应一个数据库事务。<br>
+	<strong>Session 接口：</strong><br> 
+	Session 接口是 Hibernate 应用使用最广泛的接口。Session 也被称为持久化管理器，它提供
+	了和持久化相关的操作，如添加、更新、删除、加载和查询对象。<br>
+	Session 有以下特点：<br>
+	不是线程安全的，因此在设计软件架构时，应该避免多个线程共享同一个 Session 实例。
+	Session 实例是轻量级的，所谓轻量级，是指它的创建和销毁不需要消耗太多的资源。这意
+	味着在程序中可以经常创建和销毁 Session 对象，例如为每个客户请示分配单独的 Session
+	实例，或者为每个工作单元分配单独的 Session 实例。<br>
+	Session 有一个缓存，被称为 Hibernate 的第一级缓存，它存放被当前工作单元加载的对象。
+	每个 Session 实例都有自己的缓存，这个 Sesion 实例的缓存只能被当前工作单元访问。<br>
+	<strong>Transaction 接口：</strong><br> 
+	Transaction 接口是 Hibernate 的数据库事务接口，它对底层的事务接口做了封装，底层事务
+	接口包括：<br>
+	JDBC API、JTA（Java Transaction API）、CORBA（Common Object Requet Broker Architecture）
+	API<br>
+	Hibernate 应用可通过一致的 Transaction 接口来声明事务边界，这有助于应用在不同的环境
+	容器中移植。尽管应用也可以绕过 Transaction 接口，直接访问底层的事务接口，这种方法
+	不值得推荐，因为它不利于应用在不同的环境移植。<br>
+	<strong>Query 和 Criteria 接口：</strong><br> 
+	Query 和 Criteria 接口是 Hibernate 的查询接口，用于向数据库查询对象，以及控制执行查
+	询的过程。Query 实例包装了一个 HQL 查询语句，HQL 查询语句和 SQL 查询语句有些相似，
+	但 HQL 查询语句是面向对象的，它引用类句及类的属性句，而不是表句及表的字段句。
+	Criteria 接口完全封装了基于字符串的查询语句，比 Query 接口更加面向对象，Criteria 接口
+	擅长执行动态查询。<br>
+	Session 接口的 find（）方法也具有数据查询功能，但它只是执行一些简单的 HQL 查询语句
+	的快捷方法，它的功能远没有 Query 接口强大。<br>
+	      
 	<strong>懒加载：</strong><br>
 	简述：当我们查询一个对象的时候，在默认情况下，返回的只是该对象的代理对象，当用户去使用该对象的属性时，才会向数据库再一次发出查询语句。<br>
 	例如，有一个对象是Employee，还有一个对象是Department。显然，对于Employee相对Department来说，是多对一的关系；而对于Department相对Employee来说，是一对多的关系。当我们查询Employee对象的时候，如果希望通过employee对象的属性department查询到所对应的Department，那么是会抛出异常的。这是因为懒加载的存在，在session关闭之后，hibernate又向数据库发出一次请求，结果就抛出异常了。<br>
@@ -441,7 +489,30 @@
 	在SSH框架中，使用spring提供的openSessionView<br>
 	其原理和第三种方法中使用Filter类似，只不过这个filter是spring提供的。使用时只需要在web.xml文件配置如下：<br>
 	<div><img src="/img/java/ssh.png" alt="懒加载"/></div><br>  
-	Hibernate框架，数据库的移植变的非常方便，当项目目前使用的是mysql数据库，但又想换成Oracle数据库，这时只需要改变一下数据库方言即可搞定
+	Hibernate框架，数据库的移植变的非常方便，当项目目前使用的是mysql数据库，但又想换成Oracle数据库，这时只需要改变一下数据库方言即可搞定。<br>
+	<strong>常用注解：</strong><br>
+	@Entity：声明实体 bean，每一个持久化 POJO 类都是一个实体 bean,这可以通过在类的定义中使用@Entity 注解来进行声明<br>
+	@Id：注解则声明了该实体 bean 的标识属性，对应相应表使用 id 列作为主键列<br>
+	@Table：是类一级的注解, 通过@Table 注解可以为实体 bean 映射指定表(table),目录(catalog)和 schema 的名字. 如果没有定义@Table,那么系统自动使用默认值：实体的短类名(不附带包名)<br>
+	@Transient：实体 bean 中所有的非 static 非 transient 的属性都可以被持久化, 除非你将其注解为@Transient，所有没有定义注解的属性等价于在其上面添加了@Basic 注解<br>
+	@GeneratedValue：定义该标识符的生成策略  AUTO - 可以是 identity column 类型,或者 sequence 类型或者 table 类型,取决于不同的底层数据库<br>
+	TABLE - 使用表保存 id 值<br>
+	IDENTITY - identity column<br>
+	SEQUENCE - sequence<br>
+	@OneToOne 注解可以建立实体 bean 之间的一对一的关联<br>
+	@ManyToOne 注解来定义多对一关联<br>
+	      
+	<strong>Hibernate 的执行流程：</strong><br>
+	1.通过 Configuration.configure()读取并解析 hibernate.cfg.xml 配置文件；<br>
+	2.由 hibernate.cfg.xml 中的<mapping resource=”com/xx/User.hbm.xml”/>读取并解析映射信息；<br>
+	3.通过 config.buildSerssionFactory()创建 SessionFactory;<br>
+	4.sessionFactory.openSession()打开 session；<br>
+	5.session.beginTransaction()创建事务 transation；<br>
+	6.persistent operate（持久化操作）；<br>
+	7.session.getTransaction().commit()提交事务；<br>
+	8.关闭 session;<br>
+	9.关闭 SessionFactory。<br>
+
       </p>
 	      
 	 <hr>
@@ -461,6 +532,31 @@
       <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1>
       <p>
 	Mybatis 也是对jdbc的封装，可以在配置文件中写sql语句，可以根据需求定制sql语句，数据优化起来较hibernate容易很多，但可移植性也不是很好。<br>
+      </p>
+	      
+	       <hr>
+      <h1 id="Struts2"><a href="#Struts2" class="headerlink" title="Struts2"></a>Struts2</h1>
+      <p>
+	Struts2 框架的核心控制器是 StrutsPrepareAndExecuteFilter。<br>
+
+	<strong>常用注解：</strong><br>
+	@ParentPackage：定父包<br>
+	@Namespace：指定命名空间<br>
+	@Results：一组结果的数组<br>
+	@Result(name="success",location="/msg.jsp")： 一个结果的映射（注意没有 s）<br>
+	@Action(value="login")：指定某个请求处理方法的请求 URL。注意，它不能添加在 Action 类上，要添加到方法上。<br>
+	@ExceptionMappings ：一级声明异常的数组<br>
+	@ExceptionMapping： 映射一个声明异常自定义注解拦截器权限控制<br>
+	<strong>拦截器和过滤器的区别：</strong><br>      
+	1、拦截器是基于 java 反射机制的，而过滤器是基于函数回调的。<br>
+	2、过滤器依赖于 servlet 容器，而拦截器不依赖于 servlet 容器。<br>
+	3、拦截器只能对 Action 请求起作用，而过滤器则可以对几乎所有请求起作用。<br>
+	4、拦截器可以访问 Action 上下文、值栈里的对象，而过滤器不能。<br>
+	5、在 Action 的生命周期中，拦截器可以多次调用，而过滤器只能在容器初始化时被调用一次。<br>
+	<strong>ActionContext、ServletContext、pageContext 的区别：</strong><br>      
+	1、ActionContext 是当前的 Action 的上下文环境，通过 ActionContext 可以获取到 request、session、ServletContext 等与 Action 有关的对象的引用；<br>
+	2、ServletContext 是域对象，一个 web 应用中只有一个 ServletContext，生命周期伴随整个 web 应用；<br>
+	3、pageContext 是 JSP 中的最重要的一个内置对象，可以通过 pageContext 获取其他域对象的应用，同时它是一个域对象，作用范围只针对当前页面，当前页面结束时，pageContext 销毁。<br>
       </p>
 	      
 	      
