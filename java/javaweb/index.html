@@ -542,7 +542,38 @@
 	@Repository：对应数据访问层 Bean<br>
 	      
       </p>
+	   
 	      
+	      <hr>
+      <h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1>
+      <p>
+	<strong>工作流程：</strong><br>
+	1、用户发送请求至前端控制器 DispatcherServlet<br>
+	2、DispatcherServlet 收到请求调用 HandlerMapping 处理器映射器。<br>
+	3、处理器映射器找到具体的处理器，生成处理器对象及处理器拦截器(如果有则生成)一并返回给 DispatcherServlet。<br>
+	4、DispatcherServlet 调用 HandlerAdapter 处理器适配器<br>
+	5、HandlerAdapter 经过适配调用具体的处理器(Controller，也叫后端控制器)。<br>
+	6、Controller 执行完成返回 ModelAndView<br>
+	7、HandlerAdapter 将 controller 执行结果 ModelAndView 返回给DispatcherServlet<br>
+	8、DispatcherServlet 将 ModelAndView 传给 ViewReslover 视图解析器<br>
+	9、ViewReslover 解析后返回具体 View<br>
+	10、DispatcherServlet 根据 View 进行渲染视图（即将模型数据填充至视图中）。<br>
+	11、DispatcherServlet 响应用户<br>
+	<strong>常用注解：</strong><br>
+	@RequestMapping：是一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。<br>
+	@PathVariable：用于将请求 URL 中的模板变量映射到功能处理方法的参数上，即取出 uri 模板中的变量作为参数。<br>
+	@requestParam ： 主 要 用 于 在 SpringMVC 后 台 控 制 层 获 取 参 数 ， 类 似 一 种 是
+	request.getParameter("name")，它有三个常用参数：defaultValue = "0", required = false, value 
+	= "isApp"；defaultValue 表示设置默认值，required 铜过 boolean 设置是否是必须要传入的
+	参数，value 值表示接受的传入的参数类型。<br>
+	@ResponseBody ： 该 注 解 用 于 将 Controller 的 方 法 返 回 的 对 象 ， 通 过 适 当 的
+	HttpMessageConverter 转换为指定格式后，写入到 Response 对象的 body 数据区。使用时
+	机：返回的数据不是 html 标签的页面，而是其他某种格式的数据时（如 json、xml 等）使用
+	@RequestBody ： 该 注 解 常 用 来 处 理 Content-Type: 不 是 application/x-www-formurlencoded 编码的内容，例如 application/json, application/xml 等；<br>
+	@RequestHeader ：可以把 Request 请求 header 部分的值绑定到方法的参数上。<br>
+	@CookieValue ：可以把 Request header 中关于 cookie 的值绑定到方法的参数上。<br>
+	      
+      </p>
 	      
 	 <hr>
       <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1>
