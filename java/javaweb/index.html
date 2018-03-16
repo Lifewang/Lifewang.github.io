@@ -45,25 +45,7 @@
 	        
 				<li><a href="/tags/读书/">读书</a></li>
 	        
-				<li><a href="/about/">关于我</a></li>
-			</ul>
-		</nav>
-		<nav class="header-smart-menu">		
-    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
-			
-    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
-    
-    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">关于我</a>
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/Life" title="github">github</a>
-		        
-					<a class="weibo" target="_blank" href="http://weibo.com/u/2480012737/home" title="weibo">weibo</a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss">rss</a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
 		        
 			</div>
@@ -285,6 +267,8 @@
 	语法：synchronized(obj){<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;//同步代码块<br>
 	&nbsp;&nbsp;}<br>
+	静态方法中的同步代码块的锁是：该类的字节码文件对象(该类名.class)<br>
+	非静态方法中的同步代码块的锁是：this<br>      
 	其中obj就是同步监视器，它的含义是：线程开始执行同步代码块之前，必须先获得对同步监视器的锁定。任何时刻只能有一个线程可以获得对同步监视器的锁定，当同步代码块执行完成后，该线程会释放对该同步监视器的锁定。虽然java程序允许使用任何对象作为同步监视器，但 是同步监视器的目的就是为了阻止两个线程对同一个共享资源进行并发访问，因此通常推荐使用可能被并发访问的共享资源充当同步监视器。<br>      
 	
 	      
