@@ -146,6 +146,29 @@
 			
   		</div>
 	</article>
+	    
+	    
+	<article id="post-日期" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">日期</a>
+				</h1>
+      			</header>
+        <div class="article-entry" itemprop="articleBody">
+          <p>获取前一天日期：<p/>
+          Date date = new Date();<br>
+          Calendar c = new GregorianCalendar();<br>
+          c.setTime(date);<br>
+          c.add(c.DATE,-1);<br>
+          SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");<br>
+          String lastTime = formater.format(date);<br>
+          system.out.printLn(lastTime);<br>
+        </div>
+			
+  		</div>
+	</article>
 		  
 		  
 	
