@@ -123,24 +123,26 @@
 				</h1>
       			</header>
         <div class="article-entry" itemprop="articleBody">
-          <p>懒汉式：<p/>
+          <strong>懒汉式：</strong>
           public class Singleton{<br>
-              private static (synchronized) Singleton instance;<br>
-              private Singleton(){}<br>
-              public static Singleton getInstance(){<br>
-                  if(instance == null){<br>
-                      instance = new Singleton();<br>
-                  }<br>
-                  return instance;<br>
-          }<br>
+          &nbsp;&nbsp;&nbsp;    private static Singleton instance;<br>
+          &nbsp;&nbsp;&nbsp;    private Singleton(){}<br>
+          &nbsp;&nbsp;&nbsp;    public static (synchronized) Singleton getInstance(){<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        if(instance == null){<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            instance = new Singleton();<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        return instance;<br>
+          &nbsp;&nbsp;&nbsp;   }<br>
+	  }<br>
           getInstance()方法加synchronized关键字则是多线程安全的。
-          <p>恶汉式：</p>
+          <strong>恶汉式：</strong>
           public class Singleton{<br>
-             private static Singleton instance = new Singleton();<br>
-             private Singleton(){}<br>
-             public static Singleton getInstance(){<br>
-                return instance;<br>
-             }</p>
+          &nbsp;&nbsp;&nbsp;   private static Singleton instance = new Singleton();<br>
+          &nbsp;&nbsp;&nbsp;   private Singleton(){}<br>
+          &nbsp;&nbsp;&nbsp;   public static Singleton getInstance(){<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      return instance;<br>
+          &nbsp;&nbsp;&nbsp;   }</p>
+	  }</p>
              是多线程安全的。
         </div>
 			
@@ -157,8 +159,15 @@
 				</h1>
       			</header>
         <div class="article-entry" itemprop="articleBody">
-          <p>获取前一天日期：<p/>
-          Date date = new Date();<br>
+          <strong>获取前一天日期：</strong>
+	  第一种方法：<br>
+	  Calendar c = Calendar.getInstance();<br>
+	  c.add(Calendar.DATE,-1);<br>
+	  Date date = c.getTime();<br>
+	  system.out.println(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(date));<br>
+          
+	  第二种方法：<br>
+	  Date date = new Date();<br>
           Calendar c = new GregorianCalendar();<br>
           c.setTime(date);<br>
           c.add(c.DATE,-1);<br>
