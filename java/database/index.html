@@ -122,31 +122,104 @@
 					<a class="article-title" href="">数据库连接池</a>
 				</h1>
       			</header>
-        <div class="article-entry" itemprop="articleBody">
-          <strong>基本原理：</strong><br>
-          在内部对象池中，维护一定数量的数据库连接，并对外暴露数据库连接的获取和返回方法。
-          如外部使用者可通过getConnection方法获取数据库连接，使用完毕后再通过releaseConnect方法
-          将连接返回，注意此时的连接并没有关闭，而是由连接池管理器回收，并为下一次使用做好准备。<br>
-          <strong>好处：</strong><br>
-          1、资源重用<br>
-             由于数据库连接得到重用，避免了频繁创建、释放连接引起的大量性能开销。在减少系统消耗的基础上，
-             另一方面也增进了系统运行环境的平稳性(减少内存碎片以及数据库临时进程/线程的数量)。<br>
-          2、更快的系统响应速度<br>
-             数据库连接池在初始化过程中，往往已经创建了若干数据库连接置于池中备用，此时连接的
-             初始化工作均已完成。对于业务请求处理而言，直接利用现有可用连接，避免了数据库连接初始化和释放
-             过程的时间开销，从而缩减了系统整体响应时间。<br>
-          3、新的资源分配手段<br>
-             对于多应用共享同一数据库的系统而言，可在应用层通过数据库连接的配置，实现数据库连接池技术。<br>
-          4、统一的连接管理，避免数据库连接泄漏<br>
-             在较为完备的数据库连接池实现中，可根据预先的连接占用超时设定，强制收回被占用的连接，从而避免了
-             常规数据库连接操作中可能出现的资源泄漏，一个最小化的数据库连接池实现。<br>
-          <strong>连接池类是对某一数据库所有连接的“缓冲池”，主要实现以下功能：</strong><br>
-          1、从连接池获取或创建可用连接；<br>
-          2、使用完毕后，把连接返还给连接池；<br>
-          3、在系统关闭前，断开所有连接并释放连接占用的系统资源；<br>
-          4、还能够处理无效连接（原来登记为可用连接，由于某种原因不再可用，如超时，通讯问题），并能够限制
-             连接池中的连接总数不低于某个预定值和不超过某个预定值。
-        </div>
+			<div class="article-entry" itemprop="articleBody">
+			  <strong>基本原理：</strong><br>
+			  在内部对象池中，维护一定数量的数据库连接，并对外暴露数据库连接的获取和返回方法。
+			  如外部使用者可通过getConnection方法获取数据库连接，使用完毕后再通过releaseConnect方法
+			  将连接返回，注意此时的连接并没有关闭，而是由连接池管理器回收，并为下一次使用做好准备。<br>
+			  <strong>好处：</strong><br>
+			  1、资源重用<br>
+			     由于数据库连接得到重用，避免了频繁创建、释放连接引起的大量性能开销。在减少系统消耗的基础上，
+			     另一方面也增进了系统运行环境的平稳性(减少内存碎片以及数据库临时进程/线程的数量)。<br>
+			  2、更快的系统响应速度<br>
+			     数据库连接池在初始化过程中，往往已经创建了若干数据库连接置于池中备用，此时连接的
+			     初始化工作均已完成。对于业务请求处理而言，直接利用现有可用连接，避免了数据库连接初始化和释放
+			     过程的时间开销，从而缩减了系统整体响应时间。<br>
+			  3、新的资源分配手段<br>
+			     对于多应用共享同一数据库的系统而言，可在应用层通过数据库连接的配置，实现数据库连接池技术。<br>
+			  4、统一的连接管理，避免数据库连接泄漏<br>
+			     在较为完备的数据库连接池实现中，可根据预先的连接占用超时设定，强制收回被占用的连接，从而避免了
+			     常规数据库连接操作中可能出现的资源泄漏，一个最小化的数据库连接池实现。<br>
+			  <strong>连接池类是对某一数据库所有连接的“缓冲池”，主要实现以下功能：</strong><br>
+			  1、从连接池获取或创建可用连接；<br>
+			  2、使用完毕后，把连接返还给连接池；<br>
+			  3、在系统关闭前，断开所有连接并释放连接占用的系统资源；<br>
+			  4、还能够处理无效连接（原来登记为可用连接，由于某种原因不再可用，如超时，通讯问题），并能够限制
+			     连接池中的连接总数不低于某个预定值和不超过某个预定值。
+			</div>
+			
+  		</div>
+	</article>
+	      
+	      
+	      
+	<article id="post-jdbc" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">jdbc</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>连接步骤：</strong><br>
+				//第一步，注册驱动程序<br>  
+				//com.MySQL.jdbc.Driver<br>  
+				Class.forName("数据库驱动的完整类名");<br> 
+				//第二步，获取一个数据库的连接<br>   
+				Connection conn = DriverManager.getConnection("连接URL","用户名","密码");<br>
+				//第三步，创建一个会话<br>  
+				Statement stmt=conn.createStatement();<br>
+				//第四步，执行SQL语句，增加，删除，修改记录<br>  
+				stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
+				//或者查询记录<br>  
+				ResultSet rs = stmt.executeQuery("查询记录的SQL语句");<br>
+				//第五步，对查询的结果进行处理<br>  
+				while(rs.next()){<br>  
+				//对记录的操作<br>  
+				}<br>
+				//第六步，关闭连接<br>  
+				rs.close();<br>  
+				stmt.close();<br>  
+				conn.close();
+			</div>
+			
+  		</div>
+	</article>
+	      
+	      
+	      
+	      
+	<article id="post-jdbc" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">jdbc</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>连接步骤：</strong><br>
+				//第一步，注册驱动程序<br>  
+				//com.MySQL.jdbc.Driver<br>  
+				Class.forName("数据库驱动的完整类名");<br> 
+				//第二步，获取一个数据库的连接<br>   
+				Connection conn = DriverManager.getConnection("连接URL","用户名","密码");<br>
+				//第三步，创建一个会话<br>  
+				Statement stmt=conn.createStatement();<br>
+				//第四步，执行SQL语句，增加，删除，修改记录<br>  
+				stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
+				//或者查询记录<br>  
+				ResultSet rs = stmt.executeQuery("查询记录的SQL语句");<br>
+				//第五步，对查询的结果进行处理<br>  
+				while(rs.next()){<br>  
+				//对记录的操作<br>  
+				}<br>
+				//第六步，关闭连接<br>  
+				rs.close();<br>  
+				stmt.close();<br>  
+				conn.close();
+			</div>
 			
   		</div>
 	</article>
