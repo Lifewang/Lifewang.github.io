@@ -103,42 +103,6 @@
 <div class="body-wrap">
         
 	
-	<article id="post-javaweb知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  		<div class="article-inner">
-      			<input type="hidden" class="isFancy" />
-      			<header class="article-header">
-				<h1 itemprop="name">
-					<a class="article-title" href="">javaweb知识点</a>
-				</h1>
-      			</header>
-			<div class="article-entry" itemprop="articleBody">
-    <h1 id="jdbc"><a href="#jdbc" class="headerlink" title="jdbc"></a>jdbc</h1>
-    <p>
-      <strong>连接步骤：</strong><br>
-      	//第一步，注册驱动程序<br>  
-	//com.MySQL.jdbc.Driver<br>  
-	Class.forName("数据库驱动的完整类名");<br> 
-      	//第二步，获取一个数据库的连接<br>   
-	Connection conn = DriverManager.getConnection("连接URL","用户名","密码");<br>
-      	//第三步，创建一个会话<br>  
-	Statement stmt=conn.createStatement();<br>
-      	//第四步，执行SQL语句，增加，删除，修改记录<br>  
-	stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
-	//或者查询记录<br>  
-	ResultSet rs = stmt.executeQuery("查询记录的SQL语句");<br>
-	//第五步，对查询的结果进行处理<br>  
-	while(rs.next()){<br>  
-	//对记录的操作<br>  
-	}<br>
-	//第六步，关闭连接<br>  
-	rs.close();<br>  
-	stmt.close();<br>  
-	conn.close();
-     </p>
-			</div>
-  		</div>
-	</article>
-	
 	
 	<article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
   <div class="article-inner">
