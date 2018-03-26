@@ -122,29 +122,29 @@
 					<a class="article-title" href="">单例</a>
 				</h1>
       			</header>
-        <div class="article-entry" itemprop="articleBody">
-          <strong>懒汉式：</strong><br>
-          public class Singleton{<br>
-          &nbsp;&nbsp;&nbsp;    private static Singleton instance;<br>
-          &nbsp;&nbsp;&nbsp;    private Singleton(){}<br>
-          &nbsp;&nbsp;&nbsp;    public static (synchronized) Singleton getInstance(){<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        if(instance == null){<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            instance = new Singleton();<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        return instance;<br>
-          &nbsp;&nbsp;&nbsp;   }<br>
-	  }<br>
-          getInstance()方法加synchronized关键字则是多线程安全的。<br>
-          <strong>恶汉式：</strong><br>
-          public class Singleton{<br>
-          &nbsp;&nbsp;&nbsp;   private static Singleton instance = new Singleton();<br>
-          &nbsp;&nbsp;&nbsp;   private Singleton(){}<br>
-          &nbsp;&nbsp;&nbsp;   public static Singleton getInstance(){<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      return instance;<br>
-          &nbsp;&nbsp;&nbsp;   }</p>
-	  }</p>
-             是多线程安全的。
-        </div>
+			<div class="article-entry" itemprop="articleBody">
+			  <strong>懒汉式：</strong><br>
+			  public class Singleton{<br>
+			  &nbsp;&nbsp;&nbsp;    private static Singleton instance;<br>
+			  &nbsp;&nbsp;&nbsp;    private Singleton(){}<br>
+			  &nbsp;&nbsp;&nbsp;    public static (synchronized) Singleton getInstance(){<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        if(instance == null){<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            instance = new Singleton();<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        return instance;<br>
+			  &nbsp;&nbsp;&nbsp;   }<br>
+			  }<br>
+			  getInstance()方法加synchronized关键字则是多线程安全的。<br>
+			  <strong>恶汉式：</strong><br>
+			  public class Singleton{<br>
+			  &nbsp;&nbsp;&nbsp;   private static Singleton instance = new Singleton();<br>
+			  &nbsp;&nbsp;&nbsp;   private Singleton(){}<br>
+			  &nbsp;&nbsp;&nbsp;   public static Singleton getInstance(){<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      return instance;<br>
+			  &nbsp;&nbsp;&nbsp;   }</p>
+			  }</p>
+			     是多线程安全的。
+			</div>
 			
   		</div>
 	</article>
@@ -158,31 +158,464 @@
 					<a class="article-title" href="">日期</a>
 				</h1>
       			</header>
-        <div class="article-entry" itemprop="articleBody">
-          <strong>获取前一天日期：</strong><br>
-	  第一种方法：<br>
-	  Calendar c = Calendar.getInstance();<br>
-	  c.add(Calendar.DATE,-1);<br>
-	  Date date = c.getTime();<br>
-	  system.out.println(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(date));<br>
-          
-	  第二种方法：<br>
-	  Date date = new Date();<br>
-          Calendar c = new GregorianCalendar();<br>
-          c.setTime(date);<br>
-          c.add(c.DATE,-1);<br>
-          SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");<br>
-          String lastTime = formater.format(date);<br>
-          system.out.printLn(lastTime);<br>
-        </div>
+			<div class="article-entry" itemprop="articleBody">
+			  <strong>获取前一天日期：</strong><br>
+			  第一种方法：<br>
+			  Calendar c = Calendar.getInstance();<br>
+			  c.add(Calendar.DATE,-1);<br>
+			  Date date = c.getTime();<br>
+			  system.out.println(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(date));<br>
+
+			  第二种方法：<br>
+			  Date date = new Date();<br>
+			  Calendar c = new GregorianCalendar();<br>
+			  c.setTime(date);<br>
+			  c.add(c.DATE,-1);<br>
+			  SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");<br>
+			  String lastTime = formater.format(date);<br>
+			  system.out.printLn(lastTime);<br>
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	<article id="post-Git命令" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">Git命令</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	//克隆<br>  
+				git clone SSH/HTTPS路径<br>
+				//切换分支<br>
+				git checkout 分支名<br>
+				//提交项目<br>
+				git add .<br>
+				git commit -m '说明'<br>
+				git push origin 主支/分支名<br>
+				//更新所有远程分支的本地分支<br>
+				git fetch<br>
+				//合并分支<br>
+				git merge<br>
+				//更新后自动合并到本地分支(相当于前面两个命令)<br>
+				git pull<br>
+				//放弃本地修改，使远程库内容强制覆盖本地代码(HEAD指向最新版本)<br>
+				git reset --hard origin/master<br>
+				//查看提交历史<br>
+				git log<br>
+				//使用图形化工具来解决冲突<br>
+				git mergetool<br>
+				//删除本地跟踪，避免合并冲突<br>
+				git rm -r --cached WEB-INF/classes<br>
+				git rm -r --cached .bpmn/*<br>
+				git rm -r --cached .externalToolBuilders<br>
+				git rm -r --cached .settings/*<br>
+				git rm -r --cached .classpath<br>
+				git rm -r --cached .mymetdata<br>
+				git rm -r --cached target/*<br>
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	<article id="post-linux基本日常操作" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">linux基本日常操作</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	建立目录：mkdir<br>
+				删除空目录：rmdir<br>
+				删处文件：rm<br>
+				移动和重命名目录：mv<br>
+				复制文件和目录：cp<br>
+				切换目录：cd<br>
+				显示当前目录：pwd<br>
+				测试网络连通：ping<br>
+				查看网络情况：ifconfig<br>
+				杀死进程：kill<br>
+				关机：halt<br>
+				重启：reboot<br>
+				在vi中，删除光标所在行的快捷键：dd<br>
+				进入指定文件编辑：首先输入---vi 文件名 进入文件，然后输入---i对文件进行编辑 <br>
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	  
+	<article id="post-线程" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">线程</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>实现线程的方法：</strong><br>
+				两种----1、继承Thread类，2、实现Runnable接口<br>
+
+				第一种：<br>
+				new Thread(){}.start();<br>
+				这表示调用 Thread 子类对象的 run 方法，new Thread(){}表示一个Thread 的匿名子类的实例对象，子类加上 run 方法后的代码如下：<br>
+				new Thread(){<br>
+				public void run(){}<br>
+				}.start();<br>
+
+				第二种：<br>
+				new Thread(new Runnable(){}).start();<br>
+				这表示调用 Thread 对象接受的 Runnable 对象的 run 方法，new Runnable(){}表示一个 Runnable 的匿名子类的实例对象,runnable 的子类加上 run 方法后的代码如下：<br>
+				new Thread(new Runnable(){<br>
+				public void run(){}<br>
+				}).start();<br>
+
+
+				<strong>同步方法：</strong><br>
+				两种实现方法----1、synchronized，2、wait和notify<br>
+				同步方法默认用 this 或者当前类 class 对象作为锁<br>
+				<strong>同步代码块：</strong><br>
+				语法：synchronized(obj){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;//同步代码块<br>
+				&nbsp;&nbsp;}<br>
+				静态方法中的同步代码块的锁是：该类的字节码文件对象(该类名.class)<br>
+				非静态方法中的同步代码块的锁是：this<br>      
+				其中obj就是同步监视器，它的含义是：线程开始执行同步代码块之前，必须先获得对同步监视器的锁定。任何时刻只能有一个线程可以获得对同步监视器的锁定，当同步代码块执行完成后，该线程会释放对该同步监视器的锁定。虽然java程序允许使用任何对象作为同步监视器，但 是同步监视器的目的就是为了阻止两个线程对同一个共享资源进行并发访问，因此通常推荐使用可能被并发访问的共享资源充当同步监视器。<br>      
+
+
+
+				<strong>反对使用stop()和 suspend()方法：</strong><br>
+				stop()方法是不安全的，它会解除由线程获取的所有锁定<br>
+				suspend()方法容易发生死锁<br>
+
+				<strong>sleep()和wait()：</strong><br>
+				sleep----Thread 类中定义的方法，表示线程休眠，会自动唤醒；sleep()不会释放同步锁<br>
+				wait----Object 中定义的方法，需要手工调用 notify()或者 notifyAll()方法；wait()会释放同步锁<br>
+				<strong>避免死锁的方式：</strong><br>      
+				指定获取锁的顺序，并强制线程按照指定的顺序获取锁。因此，如果所有的线程都是以同样的顺序加锁和释放锁，就不会出现死锁了。<br> 
+			</div>
 			
   		</div>
 	</article>
 		  
 		  
+	<article id="post-常用的类，包，接口" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">常用的类，包，接口</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>常用的类：</strong><br>
+			      	String，Integer，List，HashMap，java.util.Date，BufferedReader，BufferedWriter，FileReader，FileWirter，System，Class<br>
+				<strong>常用的包：</strong><br>
+			      	java.lang（Object、Math、String、StringBuffer）；<br>
+			      	java.io；<br>
+			      	java.util（Date、日历类Calendar、随机数类Random、List接口、Collection接口、Set接口、Map接口）；<br>
+			      	java.sql；<br>
+			      	java.net（InetAddress）；<br>
+			      	java.awt；<br>
+			      	javax.swing；<br>
+			      	java.text<br>
+				<strong>常用的接口：</strong><br>
+			      	List，Map，Servlet，HttpSession，Iterator，Remote，HttpServletRequest，HttpServletResponse<br>	
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	  
+	<article id="post-流" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">流</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>两种类型的流：</strong>字节流，字符流。<br>
+				字节流继承于 InputStream 和 OutputStream；<br>
+				字符流继承于 InputStreamReader 和 OutputStreamWriter<br>
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	  
+	<article id="post-垃圾回收" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">垃圾回收</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>GC：</strong>垃圾回收，使用 GC 可以进行垃圾空间释放操作。<br>
+				<strong>垃圾回收器的基本原理：</strong>对于 GC 来说，当程序员创建对象时，GC 就开始监控这个对象的地址、大小以及使用情况。通常，GC 采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是"可达的"，哪些对象是"不可达的"。当 GC 确定一些对象为"不可达"时，GC 就有责任回收这些内存空间。<br>
+				<strong>垃圾回收的好处：</strong><br>
+					1、可以有效的防止内存泄露；<br>
+					2、有效的使用可以使用的内存。<br>
+				<strong>两种垃圾回收机制：</strong>自动回收和手工调用 System.gc()方法<br>
+				      调用 System.gc 就相当于调用了Runtime.getRuntime().gc()方法<br>
+				      但是需要注意的是---程序员可以手动执行 System.gc()，通知 GC 运行，但是 Java 语言规范并不保证 GC 一定会执行。
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	  
+	<article id="post-变量和方法" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">变量和方法</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>局部变量：</strong><br>
+				      局部变量前不能放置任何访问修饰符 (private，public，和 protected)，final 可以用来修饰局部变量。<br>
+				<strong>方法：</strong><br>
+				      abstract的 methods就是让子类 implement(实现)具体细节的，所以不能以private 和 final修饰。<br>
+				      静态方法不能直接访问非静态方法。<br>
+				<strong>实例变量（成员变量）：</strong><br>
+				      final修饰的实例变量（成员变量）没有默认值，必须在 constructor (构造器)结束之前被赋予一个明确的值。<br>
+				      例如：final int i = 0;<br>
+			</div>
+			
+  		</div>
+	</article>
+	
+	  
+	<article id="post-前端" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">前端</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>CSS：</strong><br>
+				css盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。<br>
+				<strong>JS：</strong><br>
+				<span>js库：</span><br>
+				      1、moment.js：用js转换时间戳为日期。<br>
+				      2、chart.js：绘制简单的柱状图，曲线图，蛛网图，环形图，饼图等完全够用，用法比较简单。<br>
+				      3、Rx.js：很好的解决了异步和事件组合的问题。<br>
+				      3、lodash.js：封装了很多javascipt数组，字符串，集合，函数等处理的函数。<br>
+				<span>js闭包：</span><br>
+				      所谓闭包：在一个函数作用域中 保留 它上级作用域的局部变量，这些局部变量不会随着上级函数的执行完毕而被销毁（个人理解）。<br>
+				      简单的理解闭包：子函数可以使用父函数的局部变量（包括参数，因为参数也是局部变量）。<br>
+			</div>
+			
+  		</div>
+	</article>
 	
 	
-
+	<article id="post-WebService" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">WebService</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	简单的说：WebService即Web服务，它是一种跨编程语言和跨操作系统平台的远程调用技术。<br>
+				Web服务：基于HTTP和XML的技术，HTTP是互联网上应用最为广泛的一种网络协议，而XML是跨平台的基础。<br>
+				<strong>WebService的三要素：</strong><br>
+				      SOAP (Simple Object Access Protocol)：简易对象访问协议，soap用来描述传递信息的格式。<br>
+				      WSDL (WebServices Description Language)：Web服务描述语言，用来描述如何访问具体的接口。<br>
+				      UDDI (Universal Description Discovery and Integration)：通用描述、发现及整合，用来管理、分发、查询webService。<br>
+				Web Service主要是为了使原来各孤立的站点之间的信息能够相互通信、共享而提出的一种接口。 Web Service所使用的是Internet上统一、开放的标准，如HTTP、XML、SOAP（简单对象访问协议）、WSDL等，所以Web Service可以在任何支持这些标准的环境（Windows,Linux）中使用。注：SOAP协议（Simple Object Access Protocal,简单对象访问协议）,它是一个用于分散和分布式环境下网络信息交换的基于XML的通讯协议。在此协议下，软件组件或应用程序能够通过标准的HTTP协议进行通讯。它的设计目标就是简单性和扩展性，这有助于大量异构程序和平台之间的互操作性，从而使存在的应用程序能够被广泛的用户访问。<br>
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	<article id="post-遍历" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">遍历</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>遍历map的方法：</strong><br>
+				      <span>方法一（只遍历键或者值）</span><br>
+					 //遍历map中的键 <br>
+					 for (Integer key : map.keySet())<br>
+					 {<br>                    
+					 &nbsp;&nbsp;&nbsp;    System.out.println("Key = " + key);<br>                    
+					 }<br>                    
+					 //遍历map中的值<br>                
+					 for (Integer value : map.values())<br>
+					 {<br>            
+					 &nbsp;&nbsp;&nbsp;     System.out.println("Value = " + value);<br>        
+					 }<br>
+				      <span>方法二（Iterator遍历）</span><br>
+					 Map<Integer, Integer> map = new HashMap<Integer, Integer>(); <br>
+					 Iterator<Map.Entry<Integer, Integer>> entries = map.entrySet().iterator();<br>
+					 while (entries.hasNext())<br>                    
+					 {<br>            
+					 &nbsp;&nbsp;&nbsp;     Map.Entry<Integer, Integer> entry = entries.next();<br> 
+					 &nbsp;&nbsp;&nbsp;     System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());<br> 
+					 }<br>
+				<strong>遍历列表中的li，并alert出来：</strong><br>
+				<div><img src="/img/java/li.png" alt="li遍历"/></div><br> 
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	  
+	<article id="post-方法重载(Overloading)和方法覆盖(Overriding)" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">方法重载(Overloading)和方法覆盖(Overriding)</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>方法重载(Overloading)：</strong><br>
+				重载是一个类中多态性的一种表现。<br>
+				如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。<br>
+				<strong>方法覆盖(Overriding)：</strong><br>
+				重写是父类与子类之间多态性的一种表现。<br>
+				方法覆盖是说子类重新定义了父类的方法。方法覆盖必须有相同的方法名，参数列表和返回类型。覆盖者可能不会限制它所覆盖的方法的访问。<br>
+			</div>
+			
+  		</div>
+	</article>
+	  
+	  
+	  
+	<article id="post-接口和抽象类" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">接口和抽象类</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  <strong>相同点：</strong><br>
+			  1、都不能被实例化；<br>
+			  2、接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后，才能被实例化。<br>
+			  <strong>不同点(Overriding)：</strong><br>
+			  1、类可以实现很多个接口，但是只能继承一个抽象类；<br>
+			  2、接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法；<br>
+			  3、接口中定义的成员变量默认修饰符为public static final（静态不能被修改），而且必须给其赋初值。抽象类可以有自己的数据成员变量，也可以有非抽象的成员变量，而且抽象类中的成员变量默认为default(本包可见)。抽象类中的方法前面有abstract修饰，不能用private、static、synchronize、native修饰，同时方法必须以分号结尾，不带花括号；<br>
+      	
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+				
+	<article id="post-基本数据类型和引用数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">基本数据类型和引用数据类型</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	  <strong>基本数据类型：</strong><br>
+				  8种基本类型：整数型---byte、shrot、int、long、har，浮点型---float、double，字符型---char，布尔型---bollean<br>
+				  <strong>引用数据类型：</strong><br>
+				  3种引用类型：<br>
+				  1、类class ，就是自己定义的数据结构，还有一些java类库中的：包括string，date等；<br>
+				  2、接口interface；<br>
+				  3、数组array<br>
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+				
+				
+	<article id="post-ArrayList和LinkedList" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">ArrayList和LinkedList</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	  ArrayList 和 LinkedList 都实现了 List 接口<br>
+				  <strong>ArrayList：</strong>
+				  底层是数组，查询速度快。<br>
+				  <strong>LinkedList：</strong>
+				  以元素列表的形式存储它的数据，每一个元素都和它的前一个和后一个元素链接在一起，在这种情况下，查找某个元素的时间长；相对于 ArrayList，LinkedList 的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引。<br>
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+	<article id="post-Cookie&Session" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">Cookie&Session</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	  会话（Session）跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用的会话跟踪技术是 Cookie与Session。Cookie 通过在客户端记录信息确定用户身份，Session 通过在服务器端记录信息确定用户身份。<br>
+				  <strong>Cookie：</strong><br>
+				  Cookie 实际上是一小段的文本信息。客户端请求服务器，如果服务器需要记录该用户状态，就使用 response 向客户端浏览器颁发一个 Cookie。客户端浏览器会把 Cookie 保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该 Cookie 一同提交给服务器。服务器检查该 Cookie，以此来辨认用户状态。服务器还可以根据需要修改 Cookie 的内容。<br>
+				  <strong>Session：</strong><br>
+				  Session 是另一种记录客户状态的机制，不同的是 Cookie 保存在客户端浏览器中，而 Session保存在服务器上。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是 Session。客户端浏览器再次访问时只需要从该 Session 中查找该客户的状态就可以了。<br>
+				  如果说 Cookie 机制是通过检查客户身上的“通行证”来确定客户身份的话，那么 Session 机制就是通过检查服务器上的“客户明细表”来确认客户身份。Session 相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。<br>
+	  
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+				
+	<article id="post-常用的类，包，接口" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">常用的类，包，接口</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	
+			</div>
+			
+  		</div>
+	</article>
 
 
 
