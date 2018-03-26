@@ -190,35 +190,52 @@
 	      
 	      
 	      
-	<article id="post-jdbc" class="article article-type-post" itemscope itemprop="blogPost">
+	<article id="post-数据库连接方法" class="article article-type-post" itemscope itemprop="blogPost">
   		<div class="article-inner">
       			<input type="hidden" class="isFancy" />
       			<header class="article-header">
 				<h1 itemprop="name">
-					<a class="article-title" href="">jdbc</a>
+					<a class="article-title" href="">数据库连接方法</a>
 				</h1>
       			</header>
 			<div class="article-entry" itemprop="articleBody">
-			  	<strong>连接步骤：</strong><br>
-				//第一步，注册驱动程序<br>  
-				//com.MySQL.jdbc.Driver<br>  
-				Class.forName("数据库驱动的完整类名");<br> 
-				//第二步，获取一个数据库的连接<br>   
-				Connection conn = DriverManager.getConnection("连接URL","用户名","密码");<br>
-				//第三步，创建一个会话<br>  
-				Statement stmt=conn.createStatement();<br>
-				//第四步，执行SQL语句，增加，删除，修改记录<br>  
-				stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
-				//或者查询记录<br>  
-				ResultSet rs = stmt.executeQuery("查询记录的SQL语句");<br>
-				//第五步，对查询的结果进行处理<br>  
-				while(rs.next()){<br>  
-				//对记录的操作<br>  
-				}<br>
-				//第六步，关闭连接<br>  
-				rs.close();<br>  
-				stmt.close();<br>  
-				conn.close();
+			      <p>
+					<strong>DBCP连接池：</strong><br>
+					driverClassName=com.mysql.jdbc.Driver<br>
+					url=jdbc:mysql://localhost:3306/数据库名<br>
+					username=root<br>
+					password=1234<br>
+					//初始化连接大小<br>
+					    initialSize=10<br>
+					//最大连接数量<br>
+					    maxActive=50<br>
+					//最大空闲连接<br>
+					    maxIdle=20<br>
+					//最小空闲连接<br>
+					    minIdle=5<br>
+					//获取连接最大等待时间(以毫秒为单位)<br>
+					    maxWait=60000
+				</p>
+				<p>
+				  	<strong>C3P0P连接池：</strong><br>
+					//导入一个核心类<br>  
+					ComboPooledDataSource  dataSource = new ComboPooledDataSource();<br>
+					dataSource.setDriverClass("com.mysql.jdbc.Driver");<br>
+					dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/数据库名");<br>
+					dataSource.setUser("root");<br>
+					dataSource.setPassword("1234");<br>
+					//初始化连接大小<br>
+					    dataSource.setInitialPoolSize(10);<br>
+					//最大连接数量<br>
+					    dataSource.setMaxPoolSize(40);<br>
+					//最小连接数<br>
+					    dataSource.setMinPoolSize(5);<br>
+					//每次增加的连接数<br>
+					    dataSource.setAcquireIncrement(2);<br>
+					//数据库连接<br>
+					    Connection conn=dataSource.getConnection();
+				</p>
+				<strong>key/value数据库：</strong>Redis是一个Key-Value存储系统<br>
 			</div>
 			
   		</div>
