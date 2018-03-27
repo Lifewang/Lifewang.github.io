@@ -602,16 +602,92 @@
 				
 				
 				
-	<article id="post-常用的类，包，接口" class="article article-type-post" itemscope itemprop="blogPost">
+	<article id="post-String、StringBuffer和StringBuilder" class="article article-type-post" itemscope itemprop="blogPost">
   		<div class="article-inner">
       			<input type="hidden" class="isFancy" />
       			<header class="article-header">
 				<h1 itemprop="name">
-					<a class="article-title" href="">常用的类，包，接口</a>
+					<a class="article-title" href="">String、StringBuffer和StringBuilder</a>
 				</h1>
       			</header>
 			<div class="article-entry" itemprop="articleBody">
-			  	
+			  	执行速度：StringBuilder > StringBuffer > String
+				<strong>String：</strong><br>
+				String为字符串常量，即String对象一旦创建之后该对象是不可更改的。<br>
+				对应的一些常用方法：<br>
+				int compareTo(String other):按照字典顺序，如果字符串位于other之前，返回一个负数；
+									 如果字符串位于other之后，返回一个正数；
+									 如果两个字符串相等，返回0；<br>
+				boolean startsWith(String prefix):如果字符串以 preffix 字符串开始，返回 true。
+				boolean endsWith(String suffix):如果字符串以 suffix 结尾，返回 true。<br>
+				boolean equals(Object other):如果字符串与 other 相等，返回 true。<br>
+				boolean equalsIgnoreCase(String other):如果字符串与 other 相等（忽略大小写），返回 true。
+				int index0f(String str):返回字符str在字符串中的下标。<br>
+				int length():返回字符串的长度。<br>
+				String substring(int beginIndex):返回从下标为beginIndex的字符到最后的一个字符串。<br>
+				String substring(int beginIndex,int endIndex):返回从下标为beginIndex字符到下标为endIndex字符的一个字符串。<br>
+				String toLowerCase():将原始字符串中的所有大写字母改成了小写字母。<br>
+				String toUpperCase():将原始字符串中的所有小写字母改成了大写字母。<br>
+				String trim():将删除了原始字符串头部和尾部的空格。<br>
+				<strong>StringBuffer和StringBuilder：</strong><br>
+				StringBuffer和StringBuilder均为字符串变量，即象是变量，是可以更改的。<br>
+				StringBuffer是线程安全的,而StringBuilder是线程不安全的。<br>
+				<strong>总结</strong><br>
+				　String：适用于少量的字符串操作的情况<br>
+				　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况<br>
+　　				StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况<br>
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+        <article id="post-BigInteger类和 BigDecimal类" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">BigInteger类和 BigDecimal类</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<strong>BigInteger类的一些方法：</strong><br>
+				加法a+b：a.add(b);  <br>
+				减法a-b：a.subtract(b);  <br>
+				乘法a*b：a.multiply(b);  <br>
+				除法a/b：a.divide(b);<br>
+				取模a%b：a.mod(b);<br>
+				<strong>BigDecimal类的一些方法：</strong><br>
+				加法a+b：a.add(b);  <br>
+				减法a-b：a.subtract(b);  <br>
+				乘法a*b：a.multiply(b);  <br>
+				除法a/b：a.divide(b);<br>
+				<strong>优点：</strong><br>
+				BigDecimal是解决float和double的精度丢失而出现的。<br>
+				<strong>例子---构造一个方法计算加减乘除：</strong><br>
+				public static BigDecimal forOperations(double a,double b,String type){<br>
+				&nbsp;&nbsp;	BigDecimal oneNum = new BigDecimal(a);<br>
+				&nbsp;&nbsp;	BigDecimal twoNum = new BigDecimal(b);<br>
+				&nbsp;&nbsp;	BigDecimal resultNum = new BigDecimal(0);<br>
+				&nbsp;&nbsp;	switch(type){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;		case "ADD" :<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			resultNum = oneNum.add(twoNum);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			break;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;		case "SUB" :<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			resultNum = oneNum.subtract(twoNum);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			break;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;		case "MUL" :<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			resultNum = oneNum.multiply(twoNum);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			break;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;		case "DIV" :<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			resultNum = oneNum.divide(twoNum);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			break;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;		default :<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;			break;<br>
+				&nbsp;&nbsp;	}<br>
+				&nbsp;&nbsp;	return resultNum;<br>
+				}<br>
+				在main方法内调用forOperations静态方法<br>
 			</div>
 			
   		</div>
