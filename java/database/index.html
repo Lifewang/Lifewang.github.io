@@ -240,6 +240,77 @@
 			
   		</div>
 	</article>
+	      
+	      
+	      
+	<article id="post-数据库及表的操作" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">数据库及表的操作</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<h3>对数据库的操作：</h3>
+			  	<strong>创建数据库：</strong>
+				create database 数据库名 [character set 字符集 collate 校对规则];<br>
+				<strong>删除数据库：</strong>
+				drop database 数据库名;<br>
+				<strong>修改数据库的字符集和校对规则：</strong>
+				alter database 数据库名 character set 字符集 [collate 校对规则];<br>
+				<strong>查询数据库：</strong><br>
+				show databases;//查询所有数据库<br>
+				show create database 数据库名;//查询某个数据库的字符集<br>
+				<strong>使用某个数据库：</strong>
+				use 数据库名;<br>
+				<strong>查询当前正在使用哪个数据库：</strong>
+				select database();<br>
+			</div><hr>
+			<div class="article-entry" itemprop="articleBody">
+				<h3>对表的操作：</h3>
+				<strong>创建表：</strong><br>
+				create table 表名(字段名 类型 约束,字段名 类型 约束)<br>
+				类型：int(整数),float,double,char(固定长度),varchar(可变长度),blob,date,datetime,timestamp<br>
+				约束:非空约束---not null，唯一约束-----unique，主键约束-----primary key,自动增长---auto_increment<br>
+				<strong>修改表：</strong><br>
+				增加一个字段：alter table 表名 add 字段名 类型 约束;<br>
+				删除一个字段：alter table 表名 drop 字段名;<br>
+				修改某个字段的类型和约束：alter table 表名 modify 字段名 类型 约束;<br>
+				修改某个字段的字段名：alter table 表名 change 旧列名 新列名 类型 约束;<br>
+				修改表名：rename table 旧表名 to 新表名;<br>
+				<strong>查询表：</strong><br>
+				查看所有表：show tables;<br>
+				查看某张表的结构：show 表名;<br>
+				查看建表语句：show create table 表名;<br>
+				<strong>插入数据：</strong><br>
+				insert into 表名(列1,,列2,列3...) values(值1,值2,值3...);//注意列和值要一一对应<br>
+				isnert into 表名 values(值1,值2,值3...);//值要和表中的每一个字段一一对应<br>
+				<strong>查询数据：</strong><br>
+				查询所有行和所有列数据：select * from 表名;<br>
+				查询特定列的数据：select 列名,列名 from 表名;<br>
+				去重查询：select distinct 列名 from 表名;<br>
+				别名查询：select 列名 as 别名 from 表名;<br>
+				运算查询只能针对数值类型的字段进行运算：select 列名+1000 from 表名;<br>
+				条件查询：比较运算符:>,<,>=,<=,=,<> ,between ...and...,in(set),like  %和_占位<br>
+				逻辑运算符：and ,or ,not<br>
+				排序查询：order by 字段名，asc表示升序，desc表示降序<br>
+			  	<strong>delete from 表名 [where条件]：</strong>
+				如果没加条件相当于将表中的数据全部删除。<br>
+				<strong>truncate table 表名：</strong>
+				这种方式其实是将表直接删除，并且创建一张字段一模一样的新表。<br>
+				<strong>drop table 表名：</strong>
+				删除表。<br>
+				<strong>语法：</strong><br>
+				select [列名,列名] [*] [聚合函数][distinct 字段] from 表名 [WHERE --> group by -->having--> order by]<br>
+				<strong>where关键字：</strong>
+				where关键字后面不能写聚合函数，是在分组前进行条件筛选。	<br>
+				<strong>having关键字：</strong>
+				having关键字后面可以写聚合函数，是在分组后进行条件筛选，并且后面的条件中只能出现聚合函数或者select关键字后出现过的字段名。<br>
+			</div>
+			
+  		</div>
+	</article>
 		  
 		  
 	
