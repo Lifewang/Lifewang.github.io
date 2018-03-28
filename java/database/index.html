@@ -267,7 +267,7 @@
 				<strong>查询当前正在使用哪个数据库：</strong>
 				select database();<br>
 			</div>
-			<div style="height:15px;"></div>
+			<div style="height:20px;"></div>
 			<div class="article-entry" itemprop="articleBody">
 				<h2>对表的操作：</h2>
 				<strong>创建表：</strong><br>
@@ -287,6 +287,8 @@
 				<strong>插入数据：</strong><br>
 				insert into 表名(列1,,列2,列3...) values(值1,值2,值3...);//注意列和值要一一对应<br>
 				isnert into 表名 values(值1,值2,值3...);//值要和表中的每一个字段一一对应<br>
+				<strong>修改数据：</strong>
+				update 表名 set 字段名=值,字段名=值 where 条件;<br>
 				<strong>查询数据：</strong><br>
 				查询所有行和所有列数据：select * from 表名;<br>
 				查询特定列的数据：select 列名,列名 from 表名;<br>
