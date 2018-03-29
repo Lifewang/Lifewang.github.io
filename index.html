@@ -111,6 +111,58 @@
       </nav>
       <div class="body-wrap"> 
 	      
+	      
+	      
+	      
+	 <article id="post-项目总结" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="/2018/03/20/项目总结/">项目总结</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<h3>Excel表的导出</h3>
+				<strong>前端</strong><br>
+				   用js写一个function函数，里面传入参数(条件)，设置url等<br>
+				   例如：function exportExcel(){<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      var obj = dj.serializeObject($('#searchForm'));<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 var p = obj.实体存在的字段;<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 var url ="${pageContext.request.contextPath}/action的value值!方法名.do?"+p;<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 window.location = url;<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;	}<br>
+				<strong>Action</strong><br>
+				   public void 方法名(){<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  HSSFWorkbook ex = 对应的Service.方法名(对象);//这里引用了一个HSSFWorkbook类<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  String fileName = "XXXX"+TimeElement.getFormatNumberDate();//设置Excel文件名<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  super.exportExcel(ex, fileName+".xls");//导出Excel，这个方法底层已经封装好了<br>
+				   }<br>
+				<strong>业务逻辑层(servicelmpl)</strong><br>
+				   public HSSFWorkbook 方法名(实体对象 x) {<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String hql = "from 实体类对应的数据表 t where 1=1 ";<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	List<Object> values = new ArrayList<Object>();<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	hql = addWhere(x, hql, values);<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	List<实体类对应的数据表> list = 对应的Dao.find(hql, values);<br>
+				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return executeExport(list);<br>
+				   }<br>
+				   private HSSFWorkbook executeExport(List<实体类对应的数据表> list) {<br>
+					Excel表格内容的设置<br>
+				   }<br>
+				<strong>RFID标签打印</strong><br>
+				1、前台通过ajax从后台获取需要打印的信息<br>
+				2、jsp页面引入js(js为RFID标签样式的设计)<br>
+				3、jsp页面的<body>里添加<Object>标签对象，并设置其属性id="本地注册的OCX插件文件名"<br>
+			</div>
+			<div class="article-info article-info-index">
+				<a href="/2018/03/20/项目总结/" class="archive-article-date">
+					<time datetime="2018-03-20T18:56:55.000Z" itemprop="datePublished"><i class="icon-clock"></i>2018-03-20</time>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+  		</div>
+	</article>
+	      
 		  
 		  
 		  
@@ -129,7 +181,7 @@
 				<h4 id="一点点的改变自己的生活"><a href="#一点点的改变自己的生活" class="headerlink" title="一点点的改变自己的生活"></a>一点点的改变自己的生活</h4>
 				<p>努力把生活过成自己想要的样子，新的一年，还是要好好生活<br>
 				   健身计划：一周至少锻炼三次<br>
-				   作息：工作日--晚11点前睡，早7点前起床；休息日--晚12点前睡，早9点前起<br>
+				   作息：工作日--晚10点前睡，早7点前起床；休息日--晚10点前睡，早9点前起<br>
 				   娱乐：休息日外出游玩或者打游戏等</p>
 			</div>
 			<div class="article-info article-info-index">
