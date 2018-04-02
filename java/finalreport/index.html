@@ -111,9 +111,8 @@
       </nav>
       <div class="body-wrap"> 
 	      
-		  
-		  
-		  
+	
+		
 	<article id="post-杭州银行智能盘库管理系统" class="article article-type-post" itemscope itemprop="blogPost">
   		<div class="article-inner">
       			<input type="hidden" class="isFancy" />
@@ -123,294 +122,78 @@
 				</h1>
       			</header>
 			<div class="article-entry" itemprop="articleBody">
-			  <strong>项目介绍：</strong>
-			  该系统是针对公司主要业务进行互联网升级的一个产品。主要功能是对仓库押品、代保管品的管理实现自动化识别、库存准确定位、仓储物资调拨管理、自动化/半自动化盘点、实时报表输出等一系列自动化操作，旨在打造一个信息化管理解决方案平台。<br>
-			  <strong>项目模块：</strong><br>
-			  1、系统管理<br>
-			     &nbsp;&nbsp;&nbsp;用户管理<br>
-           &nbsp;&nbsp;&nbsp;部门管理<br>
-           &nbsp;&nbsp;&nbsp;数据字典<br>
-           &nbsp;&nbsp;&nbsp;角色管理<br>
-           &nbsp;&nbsp;&nbsp;菜单管理<br>
-			  2、实物管理<br>
-			     &nbsp;&nbsp;&nbsp;押品基础信息管理<br>
-           &nbsp;&nbsp;&nbsp;代保管品信息管理<br>
-			  3、入库管理<br>
-			     &nbsp;&nbsp;&nbsp;押品入库<br>
-           &nbsp;&nbsp;&nbsp;代保管品入库<br>
-			  4、出库管理<br>
-			     &nbsp;&nbsp;&nbsp;押品出库<br>
-           &nbsp;&nbsp;&nbsp;代保管品出库<br>
-        5、借阅管理<br>
-			     &nbsp;&nbsp;&nbsp;押品借阅<br>
-			  6、归还管理<br>
-			     &nbsp;&nbsp;&nbsp;押品归还<br>
-        7、任务管理<br>
-			     &nbsp;&nbsp;&nbsp;我的任务<br>
-           &nbsp;&nbsp;&nbsp;主管授权<br>
-        8、库房管理<br>
-			     &nbsp;&nbsp;&nbsp;仓位设置<br>
-			  9、盘库管理<br>
-			     &nbsp;&nbsp;&nbsp;盘点计划<br>
-        10、统计报表<br>
-			     &nbsp;&nbsp;&nbsp;抵质押品库存明细报表<br>
-           &nbsp;&nbsp;&nbsp;代保管品库存明细报表<br>
-           &nbsp;&nbsp;&nbsp;抵质押品业务日报汇总<br>
-           &nbsp;&nbsp;&nbsp;代保管品业务日报汇总<br>
-           &nbsp;&nbsp;&nbsp;盘点汇总表<br>
-        11、日志管理<br>
-			     &nbsp;&nbsp;&nbsp;操作日志<br>
-           &nbsp;&nbsp;&nbsp;业务日志<br>
-			  <strong>项目中的功能实现：</strong><br>
-			  Excel表的导出<br>
-        &nbsp;&nbsp;&nbsp;前端<br>
-        &nbsp;&nbsp;&nbsp;用js写一个function函数，里面传入参数(条件)，设置url等<br>
-				   &nbsp;&nbsp;&nbsp;例如：function exportExcel(){<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  var obj = dj.serializeObject($('#属性id'));<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 var p = obj.实体存在的字段;<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 var url ="${pageContext.request.contextPath}/action的value值!方法名.do?"+p;<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 window.location = url;<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	}<br>
-			  &nbsp;&nbsp;&nbsp;Action<br>
-			  &nbsp;&nbsp;&nbsp;public void 方法名(){<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  HSSFWorkbook ex = 对应的Service.方法名(对象);//这里引用了一个HSSFWorkbook类<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  String fileName = "XXXX"+TimeElement.getFormatNumberDate();//设置Excel文件名<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  super.exportExcel(ex, fileName+".xls");//导出Excel，这个方法底层已经封装好了<br>
-				&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;业务逻辑层(servicelmpl)<br>
-        &nbsp;&nbsp;&nbsp;public HSSFWorkbook 方法名(实体对象 x) {<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String hql = "from 实体类对应的数据表 t where 1=1 ";<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	List<Object> values = new ArrayList<Object>();<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	hql = addWhere(x, hql, values);<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	List<实体类对应的数据表> list = 对应的Dao.find(hql, values);<br>
-				   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return executeExport(list);<br>
-				&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;private HSSFWorkbook executeExport(List<实体类对应的数据表> list) {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Excel表格内容的设置<br>
-				&nbsp;&nbsp;&nbsp;}<br>
-        <strong>RFID标签打印(通过JS调用OCX的方式实现打印)</strong><br>
-				1、前台通过ajax从后台获取需要打印的信息<br>
-				2、jsp页面引入js(js为RFID标签样式的设计)<br>
-				3、jsp页面的<body>里添加<Object>标签对象，并设置其属性id="本地注册的OCX插件文件名"<br>
-			</div>
-			
-  		</div>
-	</article>
-	      
-	      
-	      
-	<article id="post-jdbc" class="article article-type-post" itemscope itemprop="blogPost">
-  		<div class="article-inner">
-      			<input type="hidden" class="isFancy" />
-      			<header class="article-header">
-				<h1 itemprop="name">
-					<a class="article-title" href="">jdbc</a>
-				</h1>
-      			</header>
-			<div class="article-entry" itemprop="articleBody">
-			  	<strong>连接步骤：</strong><br>
-				//第一步，注册驱动程序<br>  
-				//com.MySQL.jdbc.Driver<br>  
-				Class.forName("数据库驱动的完整类名");<br> 
-				//第二步，获取一个数据库的连接<br>   
-				Connection conn = DriverManager.getConnection("连接URL","用户名","密码");<br>
-				//第三步，创建一个会话<br>  
-				Statement stmt=conn.createStatement();<br>
-				//第四步，执行SQL语句，增加，删除，修改记录<br>  
-				stmt.executeUpdate("增加，删除，修改记录的SQL语句");<br>
-				//或者查询记录<br>  
-				ResultSet rs = stmt.executeQuery("查询记录的SQL语句");<br>
-				//第五步，对查询的结果进行处理<br>  
-				while(rs.next()){<br>  
-				//对记录的操作<br>  
-				}<br>
-				//第六步，关闭连接<br>  
-				rs.close();<br>  
-				stmt.close();<br>  
-				conn.close();
-			</div>
-			
-  		</div>
-	</article>
-	      
-	      
-	      
-	      
-	<article id="post-数据库连接方法" class="article article-type-post" itemscope itemprop="blogPost">
-  		<div class="article-inner">
-      			<input type="hidden" class="isFancy" />
-      			<header class="article-header">
-				<h1 itemprop="name">
-					<a class="article-title" href="">数据库连接方法</a>
-				</h1>
-      			</header>
-			<div class="article-entry" itemprop="articleBody">
 			      <p>
-					<strong>DBCP连接池：</strong><br>
-					driverClassName=com.mysql.jdbc.Driver<br>
-					url=jdbc:mysql://localhost:3306/数据库名<br>
-					username=root<br>
-					password=1234<br>
-					//初始化连接大小<br>
-					    initialSize=10<br>
-					//最大连接数量<br>
-					    maxActive=50<br>
-					//最大空闲连接<br>
-					    maxIdle=20<br>
-					//最小空闲连接<br>
-					    minIdle=5<br>
-					//获取连接最大等待时间(以毫秒为单位)<br>
-					    maxWait=60000
+					<strong>项目介绍：</strong><br>
+					  1、系统管理<br>
+					     &nbsp;&nbsp;&nbsp;用户管理<br>
+					     &nbsp;&nbsp;&nbsp;部门管理<br>
+					     &nbsp;&nbsp;&nbsp;数据字典<br>
+					     &nbsp;&nbsp;&nbsp;角色管理<br>
+					     &nbsp;&nbsp;&nbsp;菜单管理<br>
+				          2、实物管理<br>
+					     &nbsp;&nbsp;&nbsp;押品基础信息管理<br>
+					     &nbsp;&nbsp;&nbsp;代保管品信息管理<br>
+					  3、入库管理<br>
+					     &nbsp;&nbsp;&nbsp;押品入库<br>
+					     &nbsp;&nbsp;&nbsp;代保管品入库<br>
+					  4、出库管理<br>
+					     &nbsp;&nbsp;&nbsp;押品出库<br>
+					     &nbsp;&nbsp;&nbsp;代保管品出库<br>
+					  5、借阅管理<br>
+					     &nbsp;&nbsp;&nbsp;押品借阅<br>
+					  6、归还管理<br>
+					     &nbsp;&nbsp;&nbsp;押品归还<br>
+					  7、任务管理<br>
+					     &nbsp;&nbsp;&nbsp;我的任务<br>
+					     &nbsp;&nbsp;&nbsp;主管授权<br>
+					  8、库房管理<br>
+					     &nbsp;&nbsp;&nbsp;仓位设置<br>
+					  9、盘库管理<br>
+					     &nbsp;&nbsp;&nbsp;盘点计划<br>
+					  10、统计报表<br>
+					     &nbsp;&nbsp;&nbsp;抵质押品库存明细报表<br>
+					     &nbsp;&nbsp;&nbsp;代保管品库存明细报表<br>
+					     &nbsp;&nbsp;&nbsp;抵质押品业务日报汇总<br>
+					     &nbsp;&nbsp;&nbsp;代保管品业务日报汇总<br>
+					     &nbsp;&nbsp;&nbsp;盘点汇总表<br>
+					  11、日志管理<br>
+					     &nbsp;&nbsp;&nbsp;操作日志<br>
+					     &nbsp;&nbsp;&nbsp;业务日志<br>
 				</p>
 				<p>
-				  	<strong>C3P0P连接池：</strong><br>
-					//导入一个核心类<br>  
-					ComboPooledDataSource  dataSource = new ComboPooledDataSource();<br>
-					dataSource.setDriverClass("com.mysql.jdbc.Driver");<br>
-					dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/数据库名");<br>
-					dataSource.setUser("root");<br>
-					dataSource.setPassword("1234");<br>
-					//初始化连接大小<br>
-					    dataSource.setInitialPoolSize(10);<br>
-					//最大连接数量<br>
-					    dataSource.setMaxPoolSize(40);<br>
-					//最小连接数<br>
-					    dataSource.setMinPoolSize(5);<br>
-					//每次增加的连接数<br>
-					    dataSource.setAcquireIncrement(2);<br>
-					//数据库连接<br>
-					    Connection conn=dataSource.getConnection();
-				</p>
-				<strong>key/value数据库：</strong>Redis是一个Key-Value存储系统<br>
-			</div>
-			
-  		</div>
-	</article>
-	      
-	      
-	      
-	<article id="post-数据库及表的操作" class="article article-type-post" itemscope itemprop="blogPost">
-  		<div class="article-inner">
-      			<input type="hidden" class="isFancy" />
-      			<header class="article-header">
-				<h1 itemprop="name">
-					<a class="article-title" href="">数据库及表的操作</a>
-				</h1>
-      			</header>
-			<div class="article-entry" itemprop="articleBody">
-				<h2>对数据库的操作：</h2>
-			  	<strong>创建数据库：</strong>
-				create database 数据库名 [character set 字符集 collate 校对规则];<br>
-				<strong>删除数据库：</strong>
-				drop database 数据库名;<br>
-				<strong>修改数据库的字符集和校对规则：</strong>
-				alter database 数据库名 character set 字符集 [collate 校对规则];<br>
-				<strong>查询数据库：</strong><br>
-				show databases;//查询所有数据库<br>
-				show create database 数据库名;//查询某个数据库的字符集<br>
-				<strong>使用某个数据库：</strong>
-				use 数据库名;<br>
-				<strong>查询当前正在使用哪个数据库：</strong>
-				select database();<br>
-			</div>
-			<div style="height:20px;"></div>
-			<div class="article-entry" itemprop="articleBody">
-				<h2>对表的操作：</h2>
-				<strong>创建表：</strong><br>
-				create table 表名(字段名 类型 约束,字段名 类型 约束)<br>
-				类型：int(整数),float,double,char(固定长度),varchar(可变长度),blob,date,datetime,timestamp<br>
-				约束:非空约束---not null，唯一约束-----unique，主键约束-----primary key,自动增长---auto_increment<br>
-				<strong>修改表：</strong><br>
-				增加一个字段：alter table 表名 add 字段名 类型 约束;<br>
-				删除一个字段：alter table 表名 drop 字段名;<br>
-				修改某个字段的类型和约束：alter table 表名 modify 字段名 类型 约束;<br>
-				修改某个字段的字段名：alter table 表名 change 旧列名 新列名 类型 约束;<br>
-				修改表名：rename table 旧表名 to 新表名;<br>
-				<strong>查询表：</strong><br>
-				查看所有表：show tables;<br>
-				查看某张表的结构：desc 表名;<br>
-				查看建表语句：show create table 表名;<br>
-				<strong>插入数据：</strong><br>
-				insert into 表名(列1,,列2,列3...) values(值1,值2,值3...);//注意列和值要一一对应<br>
-				isnert into 表名 values(值1,值2,值3...);//值要和表中的每一个字段一一对应<br>
-				<strong>修改数据：</strong>
-				update 表名 set 字段名=值,字段名=值 where 条件;<br>
-				<strong>查询数据：</strong><br>
-				查询所有行和所有列数据：select * from 表名;<br>
-				查询特定列的数据：select 列名,列名 from 表名;<br>
-				去重查询：select distinct 列名 from 表名;<br>
-				别名查询：select 列名 as 别名 from 表名;<br>
-				运算查询只能针对数值类型的字段进行运算：select 列名+1000 from 表名;<br>
-				条件查询：比较运算符:>,<,>=,<=,=,<> ,between ...and...,in(set),like  %和_占位<br>
-				逻辑运算符：and ,or ,not<br>
-				排序查询：order by 字段名，asc表示升序，desc表示降序<br>
-			  	<strong>delete from 表名 [where条件]：</strong>
-				如果没加条件相当于将表中的数据全部删除。<br>
-				<strong>truncate table 表名：</strong>
-				这种方式其实是将表直接删除，并且创建一张字段一模一样的新表。<br>
-				<strong>drop table 表名：</strong>
-				删除表。<br>
-				<strong>语法：</strong><br>
-				select [列名,列名] [*] [聚合函数][distinct 字段] from 表名 [WHERE --> group by -->having--> order by]<br>
-				<strong>where关键字：</strong>
-				where关键字后面不能写聚合函数，是在分组前进行条件筛选。	<br>
-				<strong>having关键字：</strong>
-				having关键字后面可以写聚合函数，是在分组后进行条件筛选，并且后面的条件中只能出现聚合函数或者select关键字后出现过的字段名。<br>
-			</div>
-			
-  		</div>
-	</article>
-		
-		
-		
-		
-	<article id="post-数据库结构优化" class="article article-type-post" itemscope itemprop="blogPost">
-  		<div class="article-inner">
-      			<input type="hidden" class="isFancy" />
-      			<header class="article-header">
-				<h1 itemprop="name">
-					<a class="article-title" href="">数据库结构优化</a>
-				</h1>
-      			</header>
-			<div class="article-entry" itemprop="articleBody">
-			      <p>
-					<strong>优化表结构：</strong><br>
-					1、尽量将表字段定义为not null约束，因为在mysql中含有空值的列很难进行查询优化，null值会使索引以及索引的统计信息变得很复杂<br>
-					2、数值类型字段的比较比字符串的比较效率高得多，字段类型尽量使用最小、最简单的数据类型<br>
-					3、尽量使用tinyint、smallint、medium_int作为整数类型而非int，如果非负则加上unsigned<br>
-					4、varchar的长度只分配真正需要的空间<br>
-					5、尽量使用timestamp而非datetime<br>
-					6、尽量不要有太多字段，建议在20以内<br>
-					7、合理的加入冗余字段可以提高查询速度（根据业务需求而定）<br>
-				</p>
-				<p>
-				  	<strong>表拆分：</strong><br>
-					1、垂直拆分<br>  
-					垂直拆分按照字段进行拆分，其实就是把组成一行的多个列分开放到不同的表中，这些表具有不同的结构，拆分后的表具有更少的列。例如用户表中的一些字段可能经常访问，可以把这些字段放进一张表里。另外一些不经常使用的信息就可以放进另外一张表里。<br>
-					插入的时候使用事务，也可以保证两表的数据一致。缺点也很明显，由于拆分出来的两张表存在一对一的关系，需要使用冗余字段，而且需要join操作，我们在使用的时候可以分别取两次，这样的来说既可以避免join操作，又可以提高效率。<br>
-					2、水平拆分<br>
-					水平拆分按照行进行拆分，常见的就是分库分表。以用户表为例，可以取用户ID，然后对ID取10的余数，将用户均匀的分配进这 0-9这10个表中。查找的时候也按照这种规则，又快又方便。<br>
-					有些表业务关联比较强，那么可以使用按时间划分的。例如每天的数据量很大，需要每天新建一张表。这种业务类型就是需要高速插入，但是对于查询的效率不太关心。表越大，插入数据所需要索引维护的时间也就越长。<br>
-
-				</p>
-				<p>
-					<strong>分区：</strong><br>
-					使用分区是大数据处理后的产物。比如系统用户的注册推广等等，会产生海量的日志，当然也可以按照时间水平拆分，建立多张表。但在实际操作中，容易发生忘记切换表导致数据错误。<br>
-					分区适用于例如日志记录，查询少。一般用于后台的数据报表分析。对于这些数据汇总需求，需要很多日志表去做数据聚合，我们能够容忍1s到2s的延迟，只要数据准确能够满足需求就可以。<br>
-					MySQL主要支持4种模式的分区：range分区、list预定义列表分区，hash 分区，key键值分区。<br>
-				</p>
-				<p>
-					<strong>读写分离：</strong><br>
-					大型网站会有大量的并发访问，如果还是传统的数据结构，或者只是单单靠一台服务器扛，如此多的数据库连接操作，数据库必然会崩溃，数据丢失的话，后果更是不堪设想。这时候，我们需要考虑如何减少数据库的联接。<br>
-					我们发现一般情况对数据库而言都是“读多写少”，也就说对数据库读取数据的压力比较大，这样分析可以采用数据库集群的方案。其中一个是主库，负责写入数据，我们称为写库；其它都是从库，负责读取数据，我们称为读库。这样可以缓解一台服务器的访问压力。<br>
-				</p>
-				<p>
-					<strong>数据库集群：</strong><br>
-					如果访问量非常大，虽然使用读写分离能够缓解压力，但是一旦写操作一台服务器都不能承受了，这个时候我们就需要考虑使用多台服务器实现写操作。<br>
-					例如可以使用MyCat搭建MySql集群，对ID求3的余数，这样可以把数据分别存放到3台不同的服务器上，由MyCat负责维护集群节点的使用。<br>
+				  	<strong>项目中的功能实现：</strong><br>
+					Excel表的导出<br>  
+					   &nbsp;&nbsp;&nbsp;前端<br>
+					   &nbsp;&nbsp;&nbsp;用js写一个function函数，里面传入参数(条件)，设置url等<br>
+					   &nbsp;&nbsp;&nbsp;例如：function exportExcel(){<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  var obj = dj.serializeObject(获取对应的属性id);<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 var p = obj.实体存在的字段;<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 var url ="相对路径/action的value值!方法名.do?"+p;<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 window.location = url;<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	}<br>
+					   &nbsp;&nbsp;&nbsp;Action<br>
+					   &nbsp;&nbsp;&nbsp;public void 方法名(){<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  HSSFWorkbook ex = 对应的Service.方法名(对象);//这里引用了一个HSSFWorkbook类<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  String fileName = "XXXX"+TimeElement.getFormatNumberDate();//设置Excel文件名<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  super.exportExcel(ex, fileName+".xls");//导出Excel，这个方法底层已经封装好了<br>
+					   &nbsp;&nbsp;&nbsp;}<br>
+					   &nbsp;&nbsp;&nbsp;业务逻辑层(servicelmpl)<br>
+					   &nbsp;&nbsp;&nbsp;public HSSFWorkbook 方法名(实体对象 x) {<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String hql = "from 实体类对应的数据表 t where 1=1 ";<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	List<Object> values = new ArrayList<Object>();<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	hql = addWhere(x, hql, values);<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	List<实体类对应的数据表> list = 对应的Dao.find(hql, values);<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return executeExport(list);<br>
+					   &nbsp;&nbsp;&nbsp;}<br>
+					   &nbsp;&nbsp;&nbsp;private HSSFWorkbook executeExport(List<实体类对应的数据表> list) {<br>
+					   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Excel表格内容的设置<br>
+					   &nbsp;&nbsp;&nbsp;}<br>
+					RFID标签打印(通过JS调用OCX的方式实现打印)<br>
+					1、前台通过ajax从后台获取需要打印的信息<br>
+					2、jsp页面引入js(js为RFID标签样式的设计)<br>
+					3、jsp页面的<body>里添加<Object>标签对象，并设置其属性id="本地注册的OCX插件文件名"<br>
 				</p>
 				
-				<strong>key/value数据库：</strong>Redis是一个Key-Value存储系统<br>
 			</div>
 			
   		</div>
