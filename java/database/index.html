@@ -369,6 +369,56 @@
 			
   		</div>
 	</article>
+		
+		
+		
+		
+	<article id="post-mysql索引类型以及适用场景" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">mysql索引类型以及适用场景</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>索引类型：</strong><br>
+				1、普通索引：最基本的索引，没有任何限制；<br> 
+				2、唯一索引：索引列的值必须唯一，但允许有空值；<br> 
+				3、主键索引：主键索引属于一种特殊的唯一索引，不允许有空值；<br> 
+				4、单列索引：单个多列索引（组合索引）效率高于多个单列索引；<br>
+				5、最左前缀(Leftmost Prefixing)：多列索引；<br> 
+				<strong>适用场景：</strong><br>
+				1、快速查找符合where条件的记录；<br>
+				2、快速确定候选集。若where条件使用了多个索引字段，则MySQL会优先使用能使候选记录集规模最小的那个索引，以便尽快淘汰不符合条件的记录；<br>
+				3、如果表中存在几个字段构成的联合索引，则查找记录时，这个联合索引的最左前缀匹配字段也会被自动作为索引来加速查找；<br>
+				4、多表做join操作时会使用索引（如果参与join的字段在这些表中均建立了索引的话）；<br>
+				5、若某字段已建立索引，求该字段的min()或max()时，MySQL会使用索引；<br>
+				6、对建立了索引的字段做sort或group操作时，MySQL会使用索引；<br>
+			</div>
+			
+  		</div>
+	</article>
+		
+		
+		
+	<article id="post-Nosql数据库的数据类型及场景" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">Nosql数据库的数据类型及场景</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	<strong>NoSQL数据库的类型：</strong><br>
+				NoSQL可以大体上分为4个种类：Key-value、Document-Oriented、Column-Family Databases以及 Graph-Oriented Databases。<br> 
+				<strong>适用场景：</strong><br>
+				储存用户信息，比如会话、配置文件、参数、购物车等等。这些信息一般都和ID（键）挂钩，这种情景下键值数据库是个很好的选择。<br>
+			</div>
+			
+  		</div>
+	</article>
 		  
 		  
 	
