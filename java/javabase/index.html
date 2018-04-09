@@ -264,7 +264,7 @@
       			</header>
 			<div class="article-entry" itemprop="articleBody">
 			  	<strong>实现线程的方法：</strong><br>
-				两种----1、继承Thread类，2、实现Runnable接口<br>
+				两种----1、继承Thread类，2、实现Runnable或Callable接口<br>
 
 				第一种：<br>
 				new Thread(){}.start();<br>
@@ -279,6 +279,16 @@
 				new Thread(new Runnable(){<br>
 				public void run(){}<br>
 				}).start();<br>
+				
+				
+				<strong>Runnable和Callable：</strong><br>
+				相同点----1、两者都是接口；<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、两者都可用来编写多线程程序；<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、两者都需要调用Thread.start()启动线程。<br>
+				不同点----1、Callable规定的方法是call()，Runnable规定的方法是run()。其中Runnable可以提交给Thread来包装下，直接启动一个线程来执行，而Callable则一般都是提交给ExecuteService来执行；<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、Callable的任务执行后可返回值，而Runnable的任务是不能返回值的；<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、call方法可以抛出异常，run方法不可以；<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、运行Callable任务可以拿到一个Future对象，Future 表示异步计算的结果。<br>
 
 
 				<strong>同步方法：</strong><br>
@@ -316,6 +326,11 @@
 				<strong>this关键字：</strong><br>
 				代表类的对象，简单说---哪个对象在调用this所在的函数，this就代表哪个对象(谁调用我，我就代表谁)。<br>
 				this的两种用法：1、区分同名变量（成员变量和局部变量）；2、用于构造函数间调用。<br>
+				
+				<strong>线程池的submit()和execute()方法区别：</strong><br>
+				1、接收的参数不一样；<br>
+				2、submit有返回值，而execute没有；<br>
+				3、submit方便Exception处理。<br>
 			</div>
 			
   		</div>
@@ -386,7 +401,12 @@
 					2、有效的使用可以使用的内存。<br>
 				<strong>两种垃圾回收机制：</strong>自动回收和手工调用 System.gc()方法<br>
 				      调用 System.gc 就相当于调用了Runtime.getRuntime().gc()方法<br>
-				      但是需要注意的是---程序员可以手动执行 System.gc()，通知 GC 运行，但是 Java 语言规范并不保证 GC 一定会执行。
+				      但是需要注意的是---程序员可以手动执行 System.gc()，通知 GC 运行，但是 Java 语言规范并不保证 GC 一定会执行。<br>
+				<strong>Java内存模型：</strong><br>
+					Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。<br>
+					1、堆内存（Heap Memory）:存放Java对象；<br>
+					2、非堆内存（Non-Heap Memory）:存放类加载信息和其它meta-data；<br>
+					3、其它（Other）:存放JVM 自身代码等。<br>
 			</div>
 			
   		</div>
@@ -411,6 +431,8 @@
 				<strong>实例变量（成员变量）：</strong><br>
 				      final修饰的实例变量（成员变量）没有默认值，必须在 constructor (构造器)结束之前被赋予一个明确的值。<br>
 				      例如：final int i = 0;<br>
+				<strong>java中的volatile变量：</strong><br>
+				      Java 语言中的 volatile 变量可以被看作是一种 “程度较轻的 synchronized”；与 synchronized 块相比，volatile 变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是 synchronized 的一部分。<br>
 			</div>
 			
   		</div>
@@ -724,6 +746,30 @@
 				  带符号右移（>>）：按照二进制把数字右移指定数位，高位如符号位为正补零，符号位负补一，低位直接移除。<br>
 				  <strong>>>>：</strong>表示无符号的右移<br>
 				  无符号的右移（>>>）:按照二进制把数字右移指定数位，高位直接补零，低位移除！<br>
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+				
+	<article id="post-http请求的交互过程" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">http请求的交互过程</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				  HTTP通信机制是在一次完整的HTTP通信过程中，Web浏览器与Web服务器之间将完成下列7个步骤：<br> 
+			  	  1、建立TCP连接；<br>
+				  2、Web浏览器向Web服务器发送请求命令；<br>
+				  3、Web浏览器发送请求头信息；<br>
+				  4、Web服务器应答；<br>
+				  5、Web服务器发送应答头信息；<br>
+				  6、Web服务器向浏览器发送数据；<br>
+				  7、Web服务器关闭TCP连接。<br>
 			</div>
 			
   		</div>
