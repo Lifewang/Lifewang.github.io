@@ -774,6 +774,97 @@
 			
   		</div>
 	</article>
+				
+				
+				
+	<article id="post-java和javascript的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">java和javascript的区别</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				  <strong>数据类型不同：</strong><br>
+			  	  Java的数据类型分为8种，分别是：byte、short、int、long、float、double、char以及Boolean;<br>
+				  JavaScript的数据类型为三种，分别为：number、string和Boolean。<br>
+				  <strong>二者定位不同：</strong><br>
+				  Java是一种完全面向对象的编程语言，想要运用Java写东西就必须先设计对象，而JavaScript不一样，它是基于对象的一种脚本语言，它为开发者自带提供了很多内部对象，要更为简易省时。<br>
+				  <strong>用处不一样：</strong><br>
+				  它们最本质的不同就是用途，Java目前被广泛应用于PC端、手机端、互联网、数据中心等等，而JavaScript则被主要用于嵌入文本到HTML页面，读写HTML元素，控制cookies等。<br>
+			</div>
+			
+  		</div>
+	</article>
+				
+				
+				
+	<article id="post-简述什么是MVC模式" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">简述什么是MVC模式</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+			  	  MVC 的全称为model-view-controller(模型-视图-控制器)。MVC 是一种开发应用程序的模式，这个模式已经具有了很好的框架架构，并且十分容易维护。使用MVC 开发出来的应用程序一般包括以下几块内容：<br>
+				  控制器(Controller)：控制器类处理客户端向Web 应用程序发出的请求，获取数据，并指定返回给客户端，用来显示处理结果的视图。<br>
+				  模型（Model）：模型类代表了应用程序的数据，这些数据通常具有一个数据验证逻辑，用来使得这些数据必须符合业务逻辑。<br>
+				  视图（View）：视图类是Web 应用程序中用来生成并显示HTML 格式的服务器端对客户端请求的响应结果的模板文件。<br>
+			</div>
+  		</div>
+	</article>
+				
+				
+				
+	<article id="post-jsp的include两种方式的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">jsp的include两种方式的区别</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				  strong>执行时间上：</strong><br>
+			  	  ＜%@ include file=”relativeURI”%＞ 是在翻译阶段执行；<br>
+				  ＜jsp:include page=”relativeURI” flush=”true” /＞ 在请求处理阶段执行。<br>
+				  <strong>引入内容的不同：</strong><br>
+			  	  ＜%@ include file=”relativeURI”%＞引入静态文本,在JSP页面被转化成servlet之前和它融和到一起，先包含，后编译，不会检查所含文件的变化，适用于包含静态页面，可以理解为纯粹是把代码写在外面的一种共享方法,所有的变量都是可以和include它的主文件共享, 两者高度紧密结合,不能有变量同名的冲突.而页面设置也可以借用主文件的<br>
+				  ＜jsp:include page=”relativeURI” flush=”true” /＞引入执行页面或servlet所生成的应答文本. 被包含的文件先编译，后包含进来，然后显示。<br>
+			</div>
+  		</div>
+	</article>
+			
+			
+			
+	<article id="post-用程序给出随便大小的10个数，序号为1-10，按从小到大顺序输出，并输出相应的序号。" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">用程序给出随便大小的10个数，序号为1-10，按从小到大顺序输出，并输出相应的序号。</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				  Map<Integer,Integer> m=new LinkedHashMap<Integer,Integer>();<br>
+			  	  Random r=new Random(); <br>
+				  for(int i=0;i<10;i++){<br>
+				  &nbsp;&nbsp;&nbsp;m.put(r.nextInt(1000),i);<br>
+			  	  }<br>
+				  System.out.println(m);
+				  ArrayList<Integer> sortedList=new ArrayList<Integer>(m.keySet());<br>
+				  Collections.sort(sortedList);  <br>
+				  System.out.println(sortedList); <br>
+				  for(int i:sortedList){<br>
+				  &nbsp;&nbsp;&nbsp;System.out.print("random Number is  "+i);<br>
+				  &nbsp;&nbsp;&nbsp;System.out.println("  order is  "+m.get(i)); <br>
+			  	  }<br>
+			</div>
+  		</div>
+	</article>
 
 
 
