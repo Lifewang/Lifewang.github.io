@@ -166,14 +166,26 @@
 			  Date date = c.getTime();<br>
 			  system.out.println(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(date));<br>
 
-			  第二种方法：<br>
-			  Date date = new Date();<br>
-			  Calendar c = new GregorianCalendar();<br>
-			  c.setTime(date);<br>
-			  c.add(c.DATE,-1);<br>
-			  SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");<br>
-			  String lastTime = formater.format(date);<br>
-			  system.out.printLn(lastTime);<br>
+			 <strong>秒转化为天小时分秒字符串：</strong><br>
+			  public static String formatSeconds(long seconds) {<br>
+			  &nbsp;&nbsp;String timeStr = seconds + "秒";<br>
+			  &nbsp;&nbsp;if (seconds > 60) {<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;long second = seconds % 60;<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;long min = seconds / 60;<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;timeStr = min + "分" + second + "秒";<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;if (min > 60) {<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = (seconds / 60) % 60;<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long hour = (seconds / 60) / 60;  <br>
+                	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeStr = hour + "小时" + min + "分" + second + "秒"; <br> 
+                	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (hour > 24) {<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hour = ((seconds / 60) / 60) % 24;<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long day = (((seconds / 60) / 60) / 24);<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeStr = day + "天" + hour + "小时" + min + "分" + second + "秒";<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+			  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+			  &nbsp;&nbsp;}<br>
+		          &nbsp;&nbsp;return timeStr;<br>
+			  }<br>
 			</div>
 			
   		</div>
