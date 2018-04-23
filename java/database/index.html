@@ -439,6 +439,62 @@
 			
   		</div>
 	</article>
+		
+		
+		
+	<article id="post-数据库索引" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">数据库索引</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<strong>索引的作用：</strong>利用索引可以快速访问数据库表中的特定信息。<br>
+			  	<strong>索引优缺点：</strong><br>
+				优点---
+				1、通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性；<br>
+				2、可以大大加快数据的检索速度；<br>
+				3、可以加速表和表之间的连接；<br>
+				4、在使用分组和排序 子句进行数据检索时，同样可以显著减少查询中分组和排序的时间；<br>
+				5、通过使用索引，可以在查询过程中，使用优化隐藏器，提高系统的性能。<br>
+				缺点---
+				1、创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加；<br>
+				2、索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要的空间会更大；<br>
+				3、当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。<br>
+				<strong>建立索引规则：</strong><br>
+				1、表的主键、外键必须有索引；<br>
+				2、数据量超过300的表应该有索引；<br>
+				3、索引应该在选择性高的字段上；<br>
+				4、频繁进行数据操作的表，不要建立太多的索引；<br>
+				5、删除无用的索引，避免对执行计划造成负面影响。<br>
+			</div>
+			
+  		</div>
+	</article>
+		
+		
+		
+		
+	<article id="post-数据库事务" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">数据库事务</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				事务是作为一个逻辑单元执行的一系列操作。<br>
+				1、原子性：要么全部执行，要么不执行；<br>
+				2、一致性：事务在完成时，必须使所有的数据都保持一致状态；<br>
+				3、隔离性：一件事务的执行不影响另一件事务的执行；<br>
+				5、持久性：事务完成之后，它对系统的影响是永久性的。<br>
+			</div>
+			
+  		</div>
+	</article>
 		  
 		  
 	
