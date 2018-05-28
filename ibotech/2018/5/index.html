@@ -121,9 +121,9 @@
 				<h1 itemprop="name">
 					<a class="article-title" href="">mybits</a>
 				</h1>
-      	</header>
+      			</header>
         <div class="article-entry" itemprop="articleBody">
-          <strong>：条件查询(从另一张表中的一个字段查询本章表中与之相关的信息)</strong><br>
+          <strong>条件查询(从另一张表中的一个字段查询本章表中与之相关的信息)：</strong><br>
           1、在Controller类中控制跳转到此页面的方法中添加一个参数；<br>
           2、将此参数作为操作数据库方法的一个参数，并将此参数存入map集合；<br>
           3、在serverImpl.java类中的对应方法中，将传入的这个参数存入map集合；<br>
@@ -133,6 +133,24 @@
           例如表中有no，idcard，name，date，days这几个字段；统计idcard，name，date，days相同条件下每个idcard拥有days相同时no个数
           select idcard，name，date，days,count(distinct days) from 表名 group by idcard，name，date，days<br>
           日期处理(其它日期类型转成Date类型)：函数convert(Date,字段)。<br>
+        </div>
+  		</div>
+	</article>
+	      
+	      
+	      
+	<article id="post-利用MyBatis Generator自动创建代码" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">利用MyBatis Generator自动创建代码</a>
+				</h1>
+      			</header>
+        <div class="article-entry" itemprop="articleBody">
+          <strong>可以参考下面的博客实现：</strong><br>
+		<a href="https://blog.csdn.net/zhshulin/article/details/23912615">MyBatis Generator自动创建代码</a><br>
+		<a href="https://blog.csdn.net/gebitan505/article/details/44455235/">SSM整合</a><br>
         </div>
   		</div>
 	</article>
