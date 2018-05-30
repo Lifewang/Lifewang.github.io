@@ -209,8 +209,29 @@
       			</header>
 			<div class="article-entry" itemprop="articleBody">
 			  	问题总是千奇百怪！对于这个问题，我并没有找到原因，仅仅找到了解决的方法。<br>
-				1、找到本地repository里面的那个jar包，除了这个jar包删除其他所有文件；
+				1、找到本地repository里面的那个jar包，除了这个jar包删除其他所有文件；<br>
 				2、点击项目名右键Maven ---》update project 问题迎刃而解。
+			
+			</div>
+  		</div>
+	</article>
+		
+		
+	<article id="post-input输入框限制" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">input输入框限制</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<strong>1、input输入框只允许输入正整数：</strong><br>
+			  	<input class="" name="" id="" value="" size="" editable="" 
+				onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"  
+    				onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"/><br>
+				<strong>2、判断两个数字的大小：</strong><br>
+				在js中比较两数的大小时，需要先将其转换成int型，例如： if(parseInt(num2)>parseInt(num1))  
 			
 			</div>
   		</div>
