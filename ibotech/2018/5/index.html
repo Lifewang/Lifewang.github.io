@@ -227,9 +227,9 @@
       			</header>
 			<div class="article-entry" itemprop="articleBody">
 				<strong>1、input输入框只允许输入正整数：</strong><br>
-			  	<input class="" name="" id="" value="" size="" editable="" 
+			  	在input标签中加入
 				onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"  
-    				onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"/><br>
+    				onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"<br>
 				<strong>2、判断两个数字的大小：</strong><br>
 				在js中比较两数的大小时，需要先将其转换成int型，例如： if(parseInt(num2)>parseInt(num1))  
 			
