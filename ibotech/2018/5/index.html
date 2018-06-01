@@ -130,8 +130,7 @@
           4、Mapper.xml文件中编写相应的sql语句，使用if标签带入参数进行查询。<br>
           <strong>sqlserver的sql编写：</strong><br>
           在SQL查询结果中添加自增列：row_number()over(order by 字段 desc)<br>
-          例如表中有no，idcard，name，date，days这几个字段；统计idcard，name，date，days相同条件下每个idcard拥有days相同时no个数
-          select idcard，name，date，days,count(distinct days) from 表名 group by idcard，name，date，days<br>
+          over()函数是sqlserver数据库的开窗函数，与row_number()结合使用，给结果进行排序编号，并且利用over子句的分组效率比group&nbsp;by子句的效率更高。<br>
           日期处理(其它日期类型转成Date类型)：函数convert(Date,字段)。<br>
         </div>
   		</div>
