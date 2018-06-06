@@ -302,20 +302,21 @@
       			</header>
 			<div class="article-entry" itemprop="articleBody">
 				<strong>1、存储过程：</strong><br>
-			  	有参数时<br> 
+			  	<strong>有参数时</strong><br> 
 				alter procedure [dbo].[存储过程名称]<br>
-				@参数1&nbsp;&nbsp;类型<br>
-				@参数2&nbsp;&nbsp;类型<br>
+				@参数1&nbsp;&nbsp;类型,<br>
+				@参数2&nbsp;&nbsp;类型,<br>
 				...	<br>
 				as	<br>
 				begin	<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;select * from 表名 where 字段 = @参数1 ...<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;select  *  from  表名  where  字段 = @参数1 ...<br>
 				end	<br>
-				无参数时<br> 
+				
+				<strong>无参数时</strong><br> 
 				alter procedure [dbo].[存储过程名称]<br>
 				as	<br>
 				begin	<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;select * from 表名 where 字段 = 某个定值<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;select  *  from  表名  where  字段 = 某个定值<br>
 				end	<br>
 				<strong>2、视图：</strong><br>
 				只需要写sql语句将所需数据查询出来，不暴露sql底层设计<br>
