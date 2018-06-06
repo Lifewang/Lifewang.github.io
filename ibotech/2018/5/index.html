@@ -139,6 +139,14 @@
 			  深入学习可点击<a href="http://www.w3school.com.cn/sql/func_convert.asp">SQL Server CONVERT() 函数</a><br>
 			  如果确定将其它日期类型转成Date类型，则函数可写为：convert(Date,字段)，输出时间格式为：yyyy-mm-dd。<br>
 			  <strong>isnull函数：</strong>用于处理null值，一般来说，将值为null的数据设置为0，可以这样写---isnull(字段,0)。<br>
+			  <strong>根据不同日期获取数据：</strong><br>
+			  	查询今天---SELECT * FROM 表名 where DATEDIFF(day,日期字段,GETDATE())=0<br>
+				查询昨天---SELECT * FROM 表名 where DATEDIFF(day,日期字段,GETDATE())=1<br>
+				查询本周---SELECT * FROM 表名 where DATEDIFF(week,日期字段,getdate())=0<br>
+				查询上周---SELECT * FROM 表名 where DATEDIFF(week,日期字段,getdate())=1<br>
+				查询本月---SELECT * FROM 表名 where DATEDIFF(month,日期字段,GETDATE())=0<br>
+				查询上月---SELECT * FROM 表名 where DATEDIFF(month,日期字段,GETDATE())=1<br>
+				查询本年---SELECT * FROM 表名 where DATEDIFF(year,日期字段,GETDATE())=0<br>
 			</div>
   		</div>
 	</article>
@@ -284,7 +292,36 @@
 	</article>
 	    
 	  
-	
+	<article id="post-sqlserver存储过程和视图" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">sqlserver存储过程和视图</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<strong>1、存储过程：</strong><br>
+			  	有参数时<br> 
+				alter procedure [dbo].[存储过程名称]<br>
+				@参数1&nbsp;&nbsp;类型<br>
+				@参数2&nbsp;&nbsp;类型<br>
+				...	<br>
+				as	<br>
+				begin	<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;select * from 表名 where 字段 = @参数1 ...<br>
+				end	<br>
+				无参数时<br> 
+				alter procedure [dbo].[存储过程名称]<br>
+				as	<br>
+				begin	<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;select * from 表名 where 字段 = 某个定值<br>
+				end	<br>
+				<strong>2、视图：</strong><br>
+				只需要写sql语句将所需数据查询出来，不暴露sql底层设计<br>
+			</div>
+  		</div>
+	</article>
 
 
 
