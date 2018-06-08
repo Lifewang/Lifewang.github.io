@@ -213,19 +213,24 @@
 	</article>
 	    
 		
-	<article id="post-Maven 本地仓库明明有jar包，但是pom文件还是报错解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+	<article id="post-Maven项目报错问题" class="article article-type-post" itemscope itemprop="blogPost">
   		<div class="article-inner">
       			<input type="hidden" class="isFancy" />
       			<header class="article-header">
 				<h1 itemprop="name">
-					<a class="article-title" href="">Maven 本地仓库明明有jar包，但是pom文件还是报错解决办法</a>
+					<a class="article-title" href="">Maven项目报错问题</a>
 				</h1>
       			</header>
 			<div class="article-entry" itemprop="articleBody">
+				<strong>1、Maven 本地仓库明明有jar包，但是pom文件还是报错解决办法</strong><br>
 			  	问题总是千奇百怪！对于这个问题，我并没有找到原因，仅仅找到了解决的方法。<br>
 				1、找到本地repository里面的那个jar包，除了这个jar包删除其他所有文件；<br>
-				2、点击项目名右键Maven ---》update project 问题迎刃而解。
-			
+				2、点击项目名右键Maven ---》update project 问题迎刃而解。<br>
+				
+				<strong>2、Maven项目启动时，报java.lang.ClassNotFoundException</strong><br>
+				1、看build path里的jdk和maven是否正确<br>
+				2、右键点击项目-->选择Properties-->Deployment Assembly-->Add-->Java Build Path Entries-->Next-->Maven Dependencies-->Finish<br>
+				3、重新部署项目，即可。<br>
 			</div>
   		</div>
 	</article>
