@@ -363,8 +363,8 @@
       			</header>
 			<div class="article-entry" itemprop="articleBody">
 				<strong>1、软件安装</strong><br>
-				<a href="https://pan.baidu.com/s/1j0J53tK4zFkU1BzNb9uZ_Q">ADT Bundle(集成ADT、SDK的Eclipse)</a><br>
-			  	<a href="https://pan.baidu.com/s/1x09uRvINjbk0ZjYB1igPvA">Android Studio</a><br>
+				<a href="https://pan.baidu.com/s/1j0J53tK4zFkU1BzNb9uZ_Q">ADT Bundle(集成ADT、SDK的Eclipse)下载</a><br>
+			  	<a href="https://pan.baidu.com/s/1x09uRvINjbk0ZjYB1igPvA">Android Studio下载</a><br>
 				<strong>2、四大组件</strong><br> 
 				四大组件分别是：activity、service、content provider、broadcast receiver。<br>
 				<strong>activity(活动)</strong><br>
@@ -375,6 +375,34 @@
 				勇于接收广播<br>
 				<strong>Content Provider(内容提供者)</strong><br>
 				支持多个应用中存储和读取数据，相当于数据库<br>
+			</div>
+  		</div>
+	</article>
+		
+		
+		
+	<article id="post-SVN" class="article article-type-post" itemscope itemprop="blogPost">
+  		<div class="article-inner">
+      			<input type="hidden" class="isFancy" />
+      			<header class="article-header">
+				<h1 itemprop="name">
+					<a class="article-title" href="">SVN</a>
+				</h1>
+      			</header>
+			<div class="article-entry" itemprop="articleBody">
+				<strong>1、svn插件</strong><br>
+				<a href="https://pan.baidu.com/s/1vUOaVNYRGFaW0P4uEgfnEA">svn插件下载</a><br>
+				下载解压后，将features和plugins两个文件夹与eclipse/myeclipse安装目录下的features和plugins进行合并，重新打开eclipse/myeclipse即可。
+				<strong>2、本地文件与svn资源库文件进行对比</strong><br> 
+				选中要对比的文件，右键Compare With-->资源库中的最新内容，打开后的对比文件，一般情况下：本地文件在左边，资源库文件在右。<br>
+				<strong>3、项目版本更新打包及SVN提交</strong><br>
+				<strong>项目版本更新打包：</strong>首先，将login.jsp和sysmess.jsp版本号加1；<br>
+				&nbsp;&nbsp;其次，点击项目名右键-->Run As-->Maven install（如果控制台报错，project-->clean项目，然后再次执行此步骤）；<br>
+				&nbsp;&nbsp;最后，项目中的target文件夹会有一个war包，将war包打包成.zip压缩包，命名规范为：项目名_版本号.zip<br>
+				打包完成后，点击项目名右键-->Run As-->Maven clean，war包就会消失。<br>
+				<strong>SVN提交</strong><br>
+				选中项目中修改的文件的根目录文件夹，右键Team-->与资源库同步；<br>
+				所有修改的文件都会进入synchronize窗口，选中文件右键-->提交即可。<br>
 			</div>
   		</div>
 	</article>
