@@ -245,10 +245,8 @@
 				</h1>
       			</header>
 			<div class="article-entry" itemprop="articleBody">
-				<strong>1、input输入框只允许输入正整数：</strong><br>
-			  	在input标签中加入
-				onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"<br>  
-    				onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"<br>
+				<strong>1、input输入框只允许输入指定数据：</strong><br>
+			  	参考：<a href="https://www.cnblogs.com/huanhuan86/archive/2012/02/29/2372892.html">输入框数据限制</a><br><br>
 				<strong>2、判断两个数字的大小：</strong><br>
 				在js中比较两数的大小时，需要先将其转换成int型，例如： if(parseInt(num2)>parseInt(num1)) <br>
 				<strong>3、向输入框中输入数据时输入框变为红色：</strong><br>
