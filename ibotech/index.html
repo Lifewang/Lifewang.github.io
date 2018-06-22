@@ -427,15 +427,15 @@
 			<div class="article-entry" itemprop="articleBody">
 				<strong>勾选复选框后，点击查询，勾选框变为未选中</strong><br>
 				第一步、在Controller创建一个Boolean类型的变量flag，当获取到前台未勾选复选框时，flag=false，否则flag=false；<br>
-				第二步、jsp页面js中添加：美元符号($)('id选择器').attr('checked',美元符号($){flag});当flag为false时，复选框不会勾选，为true时会勾选。<br>
+				第二步、jsp页面js中添加：美元符号('id选择器').attr('checked',美元符号{flag});当flag为false时，复选框不会勾选，为true时会勾选。<br>
 				
 				<strong>序号生成策略</strong><br> 
-				<strong>第一种方法、sql语句设置序号：</strong>在sql语句中添加row_number()over (order by 字段 desc)，序号会一直递增，不会因分页而重新计数。<br> 
-				<strong>第二种方法、在js中设置：</strong><br>
+				<strong>1、sql语句设置序号：</strong>在sql语句中添加row_number()over (order by 字段 desc)，序号会一直递增，不会因分页而重新计数。<br> 
+				<strong>2、在js中设置：</strong><br>
 				在js中添加<br>
 				var len = $('id选择器').length+1;<br>
 				for(var i = 1;i<len;i++){<br>
-				&nbsp;&nbsp;    $('table tr:eq('+i+') td:first').text(i);<br>
+				    $('table tr:eq('+i+') td:first').text(i);<br>
 				}<br>序号会因为分页而重新计数(每一页的第一条序号为1)。<br>
 				
 			</div>
