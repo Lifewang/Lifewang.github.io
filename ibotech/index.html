@@ -231,6 +231,11 @@
 				1、看build path里的jdk和maven是否正确<br>
 				2、右键点击项目-->选择Properties-->Deployment Assembly-->Add-->Java Build Path Entries-->Next-->Maven Dependencies-->Finish<br>
 				3、重新部署项目，即可。<br>
+				
+				<strong>2、Maven项目文件没错，项目名红叉</strong><br>
+				默认maven采用的是自带的jdk配置版本，故会导致错误，如下设置后，即可解决<br>
+				右键点击项目-->选择Properties-->java Compiler-->Compiler compliance level设置成自己安装的JDK版本-->Finish<br>
+				
 			</div>
   		</div>
 	</article>
