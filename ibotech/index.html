@@ -252,10 +252,24 @@
 			<div class="article-entry" itemprop="articleBody">
 				<strong>1、input输入框只允许输入指定数据：</strong><br>
 			  	参考：<a href="https://www.cnblogs.com/huanhuan86/archive/2012/02/29/2372892.html">输入框数据限制</a><br><br>
+				
 				<strong>2、判断两个数字的大小：</strong><br>
 				在js中比较两数的大小时，需要先将其转换成int型，例如： if(parseInt(num2)>parseInt(num1)) <br>
+				
 				<strong>3、向输入框中输入数据时输入框变为红色：</strong><br>
 				利用HTML的类选择器(class)设置-----#属性值：hover{border:1px solid red;}<br>
+				
+				<strong>3、限制输入框中的字符数，超出是提醒：</strong><br>
+				在input标签中添加maxlength属性，用来限制字符最大输入数量；<br>
+				下面设置超出弹框提醒：<br>
+				美元符号(document).ready(function函数(){<br>
+				&nbsp;&nbsp;美元符号("标签input和id选择器")点.keyup(function函数(){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;if(美元符号("标签input和id选择器")点.val()点.length >= 某个值){
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent点.美元符号.messager点.alert弹框("温馨提示","提示信息","info");
+				&nbsp;&nbsp;&nbsp;&nbsp;}
+				});
+				});<br>
+				
 			</div>
   		</div>
 	</article>
@@ -442,6 +456,9 @@
 				for(var i = 1;i<上面定义的变量;i自增)大括号<br>
 				    美元符号('table tr:eq('+i+') td:first').text(i);<br>
 				}<br>序号会因为分页而重新计数(每一页的第一条序号为1)。<br>
+				
+				<strong>返回上一个页面</strong><br>
+				最简单的做法：在返回按钮上设置---onclick等于"window点.history点.go(-1)"<br> 
 				
 			</div>
   		</div>
