@@ -241,12 +241,12 @@
 	</article>
 		
 		
-	<article id="post-input输入框限制" class="article article-type-post" itemscope itemprop="blogPost">
+	<article id="post-input标签" class="article article-type-post" itemscope itemprop="blogPost">
   		<div class="article-inner">
       			<input type="hidden" class="isFancy" />
       			<header class="article-header">
 				<h1 itemprop="name">
-					<a class="article-title" href="">input输入框限制</a>
+					<a class="article-title" href="">input标签</a>
 				</h1>
       			</header>
 			<div class="article-entry" itemprop="articleBody">
@@ -259,7 +259,7 @@
 				<strong>3、向输入框中输入数据时输入框变为红色：</strong><br>
 				利用HTML的类选择器(class)设置-----#属性值：hover{border:1px solid red;}<br>
 				
-				<strong>3、限制输入框中的字符数，超出是提醒：</strong><br>
+				<strong>4、限制输入框中的字符数，超出是提醒：</strong><br>
 				在input标签中添加maxlength属性，用来限制字符最大输入数量(例如：maxlength="20"),添加placeholder属性提醒输入框最多可显示字符数(例如：placeholder="最大长度为20")；<br>
 				下面设置超出弹框提醒：<br>
 				美元符号(document).ready(function函数(){<br>
@@ -269,6 +269,15 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;}
 				});
 				});<br>
+				
+				<strong>5、设置input的type=checkbox复选框时，不能多选，只能单选：</strong><br>
+				type=checkbox<br>
+				js设置：美元符号(document)点.ready(函数function(){
+				&nbsp;&nbsp;&nbsp;&nbsp;美元符号('form的id选择器')点.find('input中括号[type=checkbox]')点.bind('click',函数function(){
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;美元符号('form的id选择器')点.find('input中括号[type=checkbox]')点.not(this).attr("checked", false);
+				&nbsp;&nbsp;&nbsp;&nbsp;});
+				&nbsp;&nbsp;});
+				利用HTML的类选择器(class)设置-----#属性值：hover{border:1px solid red;}<br>
 				
 			</div>
   		</div>
